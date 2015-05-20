@@ -17,14 +17,19 @@ angular.module('starter.services', [])
      var conteudo = chats.$$state.value;
      var results = [];
 
+     var itens = text.split(" ");  
+     var termo1 = itens[0];
+     var termo2 = itens[1];
+
       for(var i=0; i<conteudo.length; i++) {
         for(key in conteudo[i]) {
-          if(conteudo[i][key].indexOf(text)!=-1) {
+          if(conteudo[i][key].indexOf(termo1)!=-1 || conteudo[i][key].indexOf(termo2)!=-1) {
               results.push(conteudo[i]);            
           }    
         }
-      }
- 
+      } 
+
+
       return results;
     },
     remove: function(chat) {

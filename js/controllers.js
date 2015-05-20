@@ -33,6 +33,7 @@ angular.module('starter.controllers', ['ionic'])
             maxWidth: 200,
             showDelay: 0
           });
+                var textodigita = text.toLowerCase();
                 $scope.nomes = Chats.listagem(text);
                 $scope.erroi = "2";  
                 $ionicLoading.hide(); 
