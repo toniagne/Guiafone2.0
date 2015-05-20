@@ -10,18 +10,26 @@
   <ion-content delegate-handle="mainScroll">
    <div class="card">
       <div class="item item-divider">
-        TELEFONES EMERGENCIAIS
+        PESQUISA POR SEGMENTOS
       </div>
     </div>
   
+
+      <div class="item-input-inset">
+      <label class="item-input-wrapper" >
+        <input type="text" placeholder="DIGITE SUA PESQUISA" ng-model="expres" style="height: 50px;">
+      </label> 
+    </div>
+
+
 <ion-list>
       <ion-item 
               class="item-icon-right item-text-wrap" 
-              ng-repeat="util in uteis "  
+              ng-repeat="segmento in segmentos | filter:expres | limitTo: 15"  
               type="item-text-wrap" 
-              href="#/tab/dash/{{util.id}}*{{util.strNome}}*{{util.strTelefone1}}*{{util.strTelefone2}}*{{util.strTelefone3}}*{{util.strEndereco}}*{{util.pic}}">  
-        <h2>{{util.strNome}}</h2>
-        <p>{{util.strTelefone1}}</p>
+              href="#/tab/segmentos/{{segmento.strNome}}"> 
+         
+        <h2>{{segmento.strNome}}</h2> 
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
 </ion-list>
@@ -35,3 +43,9 @@
   </ion-content>
 </ion-view>
 
+ <div class="bar bar-footer" style="height:70px;">
+    
+      <div class="item item-image">
+        <img src="img/banners/space.png">
+      </div> 
+</div>

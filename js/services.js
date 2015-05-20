@@ -28,6 +28,14 @@ angular.module('starter.services', [])
                                   },
                              ];         
                         return detalheContato[0];    
+                      },
+     categorias: function(chatId) {
+                             var detalheContato = [
+                                {
+                                    "nome": chatId
+                                  },
+                             ];         
+                        return detalheContato[0];    
                       }
   };
 });

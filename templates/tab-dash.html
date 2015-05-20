@@ -16,13 +16,15 @@
     </div>
 
 
+
+
 <ion-list>
       <ion-item 
-              class="item-remove-animate item-avatar item-icon-right item-text-wrap" 
-              ng-repeat="nome in nomes | filter:pesquisa | orderBy:'posicao'"  
+              class="item-icon-right item-text-wrap" 
+              ng-repeat="nome in nomes | filter:pesquisa | filter:pesquisa2 | orderBy:'posicao' | limitTo: 20"  
               type="item-text-wrap" 
               href="#/tab/dash/{{nome.id}}*{{nome.strNome}}*{{nome.strTelefone1}}*{{nome.strTelefone2}}*{{nome.strTelefone3}}*{{nome.strEndereco}}*{{nome.pic}}"> 
-        <img ng-src="img/{{nome.pic}}">
+        
         <h2>{{nome.strNome}}</h2>
         <p>{{nome.strTelefone1}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
@@ -54,7 +56,7 @@
 
 
  <div class="bar bar-footer" ng-show="rodape">
-   <button class="button button-large icon-left ion-nuclear button-full button-positive"  ng-click="limpapesquisa()">
-    Limpar Pesquisa
+   <button class="button button-large icon-left ion-nuclear button-full button-positive" style="margin-top: -5px;" ng-click="limpapesquisa()">
+    LIMPAR PESQUISA
   </button> 
 </div>
