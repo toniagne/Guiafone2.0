@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['ionic'])
 
-.controller('DashCtrl', function($scope, $http, $ionicScrollDelegate, $ionicPopup, $ionicLoading) {
+.controller('DashCtrl', function($scope, $http, $ionicScrollDelegate, Chats, $ionicPopup, $ionicLoading) {
 
   $scope.pesquisa = "xxxx";    
   $scope.expres = "";
@@ -33,27 +33,25 @@ angular.module('starter.controllers', ['ionic'])
             maxWidth: 200,
             showDelay: 0
           });
+                $scope.nomes = Chats.listagem(text);
+                $scope.erroi = "2";  
+                $ionicLoading.hide(); 
+                $scope.rodape = true;
 
-               var expressao = text.split(" ");               
-                $http.get('data/todos.json')
-                  .success(function(data) {
-                    $scope.erroi = "2";  
-                    $ionicLoading.hide(); 
-                    $scope.rodape = true;
-                   })
-                  .then(        
-                      function(res){
-                        $scope.nomes  = res.data;      
-                       });     
-                      $scope.expres = "";
-                      $scope.pesquisa  = expressao[0]; 
-                      $scope.pesquisa2 = expressao[1];
+                if ($scope.nomes.length == 0) {
+                  $ionicPopup.alert({
+                     title: 'Aviso',
+                     content: 'se você não encontrou quem estava buscando, procure digitar somente o nome ou sobrenome, os clientes GuiafoneJP podem estar abreviados.'
+                   }); 
+                }
     };     
 
 })
 
 .controller('MenuCtrl', function($scope, $ionicPopup, $ionicActionSheet, $ionicModal) {
-	$scope.showPopup = function () {
+  $scope.nomes  = "";    
+
+	$scope.showPopup = function () { 
      $ionicPopup.alert({
        title: 'Popup',
        content: 'This is ionic popup alert!'
@@ -88,13 +86,13 @@ angular.module('starter.controllers', ['ionic'])
     $ionicModal.fromTemplateUrl('templates/modal.html', function (modal) {
         $scope.modal = modal;
       }, {
-        animation: 'slide-in-up'
+        animation: 'slide-in-up',
+        controller: 'MenuCtrl'
       });
-})
-
-
+}) 
 
 .controller('ChatsCtrl', function($scope, Chats, $ionicScrollDelegate, $http, $ionicLoading) {
+    $scope.nomes  = "";  
     $scope.rodape = false;
     $scope.numero = false;
     $scope.erroi = "1";  
@@ -108,6 +106,7 @@ angular.module('starter.controllers', ['ionic'])
     $scope.limpapesquisa = function (){
         $scope.pesquisa = "xxxx"; 
         $scope.expres = "";
+        $scope.nomes  = "";  
         $scope.erroi = "1";  
         $scope.rodape = false;
         $ionicScrollDelegate.$getByHandle('mainScroll').scrollTop();
@@ -133,31 +132,43 @@ angular.module('starter.controllers', ['ionic'])
             showDelay: 0
           });
                
-                $http.get('data/todos.json')
-                  .success(function(data) {
-                    $scope.erroi = "2";  
-                    $ionicLoading.hide(); 
-                    $scope.rodape = true;
-                   })
-                  .then(        
-                      function(res){
-                        $scope.nomes  = res.data;        
-                       });   
+                $scope.nomes = Chats.listagem($scope.pesquisa);
+                $scope.erroi = "2";  
+                $ionicLoading.hide(); 
+                $scope.rodape = true; 
     };               
     
    
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
+  $scope.nomes  = "";  
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
 .controller('DetalhesContatoSelecionado', function($scope, $stateParams, Chats) {
+  
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
+.controller('Sugestoes', function($scope, $stateParams, Chats) {
+  $scope.nomes  = "";    
+})
+
+.controller('Cadastro', function($scope, $stateParams, Chats) {
+  $scope.nomes  = "";   
+})
+
+.controller('Configuracoes', function($scope, $stateParams, Chats) {
+  $scope.nomes  = "";   
+})
+
+.controller('Favoritos', function($scope, $stateParams, Chats) {
+  $scope.nomes  = "";   
+})
+
 .controller('SegmentosDetalhes', function($scope, $http, $stateParams, Chats, $ionicLoading) {
-  $ionicLoading.show({
+   $ionicLoading.show({
             content: 'Carregando Unidades',
             animation: 'fade-in',
             showBackdrop: true,
@@ -165,22 +176,16 @@ angular.module('starter.controllers', ['ionic'])
             showDelay: 0
           });
                
-  $http.get('data/todos.json')
-                  .success(function(data) {
-                    $scope.erroi = "2";  
-                    $ionicLoading.hide(); 
-                    $scope.rodape = true;
-                   })
-                  .then(        
-                      function(res){
-                        $scope.nomes  = res.data;        
-                       });  
-                  $scope.pesquisa = $stateParams.chatId;
+ $scope.nomes = Chats.listagem($stateParams.chatId);
+                $scope.erroi = "2";  
+                $ionicLoading.hide(); 
+                $scope.rodape = true;
 
   $scope.chat = Chats.categorias($stateParams.chatId);
 })
 
 .controller('Segmentos', function($scope, $http, $ionicLoading) {
+  $scope.nomes  = "";  
   $ionicLoading.show({
             content: 'Carregando Unidades',
             animation: 'fade-in',
@@ -200,6 +205,7 @@ angular.module('starter.controllers', ['ionic'])
 })
 
 .controller('AccountCtrl', function($scope, $http) {
+  $scope.nomes  = "";  
    $http.get('data/uteis.json')
                   .success(function(data) { 
                    })

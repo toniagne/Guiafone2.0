@@ -8,7 +8,7 @@
 <ion-list>
       <ion-item 
               class="item-icon-right item-text-wrap" 
-              ng-repeat="nome in nomes | filter:pesquisa | filter:pesquisa2 | orderBy:'posicao'"  
+              ng-repeat="nome in nomes"  
               type="item-text-wrap" 
               href="#/tab/segmentos/detalhes/{{nome.id}}*{{nome.strNome}}*{{nome.strTelefone1}}*{{nome.strTelefone2}}*{{nome.strTelefone3}}*{{nome.strEndereco}}*{{nome.pic}}"> 
         

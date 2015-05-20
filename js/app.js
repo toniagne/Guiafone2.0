@@ -66,6 +66,42 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+  .state('tab.segmentos-sugestoes', {
+    url: '/segmentos/sugestoes',
+    views: {
+      'tab-segmentos': {
+        templateUrl: 'templates/sugestoes.html',
+        controller: 'Sugestoes'
+      }
+    }
+  })
+  .state('tab.segmentos-cadastro', {
+    url: '/segmentos/cadastro',
+    views: {
+      'tab-segmentos': {
+        templateUrl: 'templates/cadastro.html',
+        controller: 'Cadastro'
+      }
+    }
+  })
+  .state('tab.segmentos-configuracoes', {
+    url: '/segmentos/configuracoes',
+    views: {
+      'tab-segmentos': {
+        templateUrl: 'templates/configuracoes.html',
+        controller: 'Configuracoes'
+      }
+    }
+  })
+  .state('tab.segmentos-favoritos', {
+    url: '/segmentos/favoritos',
+    views: {
+      'tab-segmentos': {
+        templateUrl: 'templates/favoritos.html',
+        controller: 'Favoritos'
+      }
+    }
+  })
 
   .state('tab.dash', {
     url: '/dash',
@@ -79,9 +115,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
     .state('tab.dash-detalhes', {
     url: '/dash/:chatId',
+
     views: {
       'tab-dash': {
-        templateUrl: 'templates/tab-dash-detalhes.html',
+        templateUrl: 'templates/tab-dash-detalhes.html', 
         controller: 'DetalhesContatoSelecionado'
       }
     }
@@ -100,8 +137,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       url: '/chats/:chatId',
       views: {
         'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+          templateUrl: 'templates/tab-dash-detalhes.html',
+          controller: 'DetalhesContatoSelecionado'
         }
       }
     })
@@ -112,6 +149,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       'tab-account': {
         templateUrl: 'templates/tab-account.html',
         controller: 'AccountCtrl'
+      }
+    }
+  })
+  .state('tab.account-detail', {
+    url: '/account/:chatId',
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/tab-dash-detalhes.html',
+        controller: 'DetalhesContatoSelecionado'
       }
     }
   });

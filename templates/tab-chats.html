@@ -23,11 +23,10 @@
 
 <ion-list>
       <ion-item 
-              class="item-remove-animate item-avatar item-icon-right item-text-wrap" 
-              ng-repeat="rua in enderecos | filter:expres | limitTo: 2"  
+              class="item-icon-right item-text-wrap" 
+              ng-repeat="rua in enderecos | filter:expres | limitTo: 15"  
               type="item-text-wrap" 
-              ng-click="inserirnumero(rua.strEndereco);"> 
-        <img ng-src="img/map.png">
+              ng-click="inserirnumero(rua.strEndereco);">  
         <h2>{{rua.strNome}}</h2>
         <i class="icon ion-chevron-right icon-accessory"></i> 
       </ion-item>
@@ -43,11 +42,10 @@
 
 <ion-list>
       <ion-item 
-              class="item-remove-animate item-avatar item-icon-right item-text-wrap" 
-              ng-repeat="nome in nomes | filter:pesquisa | orderBy:'posicao'"  
+              class="item-icon-right item-text-wrap" 
+              ng-repeat="nome in nomes | orderBy:'posicao'"  
               type="item-text-wrap" 
-              href="#/tab/dash/{{nome.id}}*{{nome.strNome}}*{{nome.strTelefone1}}*{{nome.strTelefone2}}*{{nome.strTelefone3}}*{{nome.strEndereco}}*{{nome.pic}}"> 
-        <img ng-src="img/{{nome.pic}}">
+              href="#/tab/chats/{{nome.id}}*{{nome.strNome}}*{{nome.strTelefone1}}*{{nome.strTelefone2}}*{{nome.strTelefone3}}*{{nome.strEndereco}}*{{nome.pic}}"> 
         <h2>{{nome.strNome}}</h2>
         <p>{{nome.strTelefone1}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>

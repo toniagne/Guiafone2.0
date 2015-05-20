@@ -1,14 +1,31 @@
 angular.module('starter.services', [])
 
-.factory('Chats', function() {
-  // Might use a resource here that returns a JSON array
+.factory('Chats', function($http) {
 
-  // Some fake testing data
-  var chats = [];
+  var chats = $http.get('data/todos.json')                  
+                  .then(        
+                      function(res){   
+                       return res.data;  
+                       }); 
+ 
 
   return {
     all: function() {
       return chats;
+    },
+    listagem: function(text) {
+     var conteudo = chats.$$state.value;
+     var results = [];
+
+      for(var i=0; i<conteudo.length; i++) {
+        for(key in conteudo[i]) {
+          if(conteudo[i][key].indexOf(text)!=-1) {
+              results.push(conteudo[i]);            
+          }    
+        }
+      }
+ 
+      return results;
     },
     remove: function(chat) {
       chats.splice(chats.indexOf(chat), 1);

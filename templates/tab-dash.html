@@ -17,11 +17,11 @@
 
 
 
-
+ 
 <ion-list>
       <ion-item 
               class="item-icon-right item-text-wrap" 
-              ng-repeat="nome in nomes | filter:pesquisa | filter:pesquisa2 | orderBy:'posicao' | limitTo: 20"  
+              ng-repeat="nome in nomes"  
               type="item-text-wrap" 
               href="#/tab/dash/{{nome.id}}*{{nome.strNome}}*{{nome.strTelefone1}}*{{nome.strTelefone2}}*{{nome.strTelefone3}}*{{nome.strEndereco}}*{{nome.pic}}"> 
         
@@ -38,17 +38,31 @@
  </div>
 
 
-<div class="list card">
-  <div class="item item-image">
-    <img src="img/banners/banner_cellsystem.png">
-  </div>
-   <div class="item item-image">
-    <img src="img/banners/banner_maqgelar.png">
-  </div>
-  <div class="item item-image">
-    <img src="img/banners/space.png">
-  </div>
+ 
+ <br><Br>
+ <div class="list list-inset">
+  <label class="item item-input">
+    <i class="icon ion-android-star placeholder-icon"></i>
+     Empresas Favoritas
+  </label>
 </div>
+ <div class="row">
+  <div class="col">
+  <a href="#/tab/dash/0001*CellSystem computadores*37221000*37221177**7 de Setembro, 1500*business.png">
+   <img src="img/banners/cellsystem-ico.png" width="100%">
+   </a>
+  </div>
+  <div class="col">
+    <a href="#/tab/dash/0001*MAQGELAR REFRIGERAÇÃO, CLIMATIZAÇÃO E MÁQUINAS*37222420*92145303*95007018*Dnª Hermínia, 1975*business.png">
+   <img src="img/banners/maqgelar-ico.png" width="100%">
+   </a>
+  </div>
+  <div class="col">
+   <a href="#/tab/dash/0001*CASA DO ALARME*37245422*97120837**A Borges, 879 02*business.png">
+   <img src="img/banners/casadoalarme-ico.png" width="100%">
+   </a>
+  </div>
+  </div>
 
 
   </ion-content>
