@@ -1,0 +1,54 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="+ DETALHES">
+  <ion-content class="padding">
+
+  <div class="list card">
+
+  <div class="item item-avatar item-text-wrap">
+    <img src="img/{{chat.fotoInterna}}">
+    <h2>{{chat.strNome}}</h2>
+    <p> <b>{{chat.strEndereco}}</b></p>
+  </div>
+
+  <div class="item item-body"> 
+   <div class="list">
+
+
+  <a class="item item-icon-left item-icon-right" href="tel:{{chat.strTelefone1}}" ng-if="chat.strTelefone1">
+    <i class="icon ion-android-arrow-dropright-circle"></i>
+    <h2>{{chat.strTelefone1}}</h2>
+    <i class="icon ion-ios-telephone-outline"></i>
+  </a>
+
+   <a class="item item-icon-left item-icon-right" href="tel:{{chat.strTelefone2}}" ng-if="chat.strTelefone2">
+    <i class="icon ion-android-arrow-dropright-circle"></i>
+    <h2>{{chat.strTelefone2}}</h2>
+    <i class="icon ion-ios-telephone-outline"></i>
+  </a>
+
+   <a class="item item-icon-left item-icon-right" href="tel:{{chat.strTelefone3}}" ng-if="chat.strTelefone3">
+    <i class="icon ion-android-arrow-dropright-circle"></i>
+    <h2>{{chat.strTelefone3}}</h2>
+    <i class="icon ion-ios-telephone-outline"></i>
+  </a>
+
+</div>
+  </div>
+
+   <div class="item tabs tabs-secondary tabs-icon-left">
+    <a class="tab-item" href="#">
+      <i class="icon ion-android-favorite"></i>
+      INCLUIR NO FAVORITOS
+    </a>
+  </div>
+
+</div>
+
+
+  </ion-content>
+</ion-view>

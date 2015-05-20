@@ -1,0 +1,38 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-nav-bar class="bar-dark">
+        <ion-nav-back-button class="button-icon ion-arrow-left-c">
+        </ion-nav-back-button>
+
+ 
+        <ion-nav-buttons side="right">
+          <button class="button button-icon button-clear ion-navicon" ng-click="modal.show()" ng-controller="MenuCtrl"></button>
+        </ion-nav-buttons>
+</ion-nav-bar>
+
+<ion-tabs class="tabs-icon-top tabs-top tabs-background-energized tabs-color-dark">
+
+  <!-- Dashboard Tab -->
+  <ion-tab title="Nomes" icon-off="ion-ios-person-outline" icon-on="ion-ios-person" href="#/tab/dash">
+    <ion-nav-view name="tab-dash"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Chats Tab -->
+  <ion-tab title="Endereços" icon-off="ion-map" icon-on="ion-android-map" href="#/tab/chats">
+    <ion-nav-view name="tab-chats"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Account Tab -->
+  <ion-tab title="Emergenciais" icon-off="ion-ios-medical-outline" icon-on="ion-ios-medical" href="#/tab/account">
+    <ion-nav-view name="tab-account"></ion-nav-view>
+  </ion-tab>
+
+    <ion-tab title="Segmentos" icon-off="ion-ios-pricetag-outline" icon-on="ion-ios-pricetag" href="#/tab/segmentos">
+    <ion-nav-view name="tab-segmentos"></ion-nav-view>
+  </ion-tab>
+
+
+</ion-tabs>

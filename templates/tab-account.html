@@ -1,0 +1,38 @@
+ 
+     
+
+
+<ion-view>
+  <ion-nav-title>
+      <img src="img/logo.png" width="80%" style="margin-top: -10px;"> 
+  </ion-nav-title>
+
+  <ion-content delegate-handle="mainScroll">
+   <div class="card">
+      <div class="item item-divider">
+        TELEFONES EMERGENCIAIS
+      </div>
+    </div>
+  
+<ion-list>
+      <ion-item 
+              class="item-remove-animate item-avatar item-icon-right item-text-wrap" 
+              ng-repeat="util in uteis "  
+              type="item-text-wrap" 
+              href="#/tab/dash/{{util.id}}*{{util.strNome}}*{{util.strTelefone1}}*{{util.strTelefone2}}*{{util.strTelefone3}}*{{util.strEndereco}}*{{util.pic}}"> 
+        <img ng-src="img/{{util.pic}}">
+        <h2>{{util.strNome}}</h2>
+        <p>{{util.strTelefone1}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+</ion-list>
+
+ <div ng-if="erroi === '2'">
+    <div class="tela-erro" ng-show="(nomes | filter:pesquisa).length == 0">  
+      <!--  <span ng-init="abreaviso('Não foi encontrado nenhum item com esta expressão.')"></span> -->
+    </div>
+ </div>
+
+  </ion-content>
+</ion-view>
+

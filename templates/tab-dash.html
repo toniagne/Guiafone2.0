@@ -1,0 +1,60 @@
+ 
+     
+
+
+<ion-view>
+  <ion-nav-title>
+      <img src="img/logo.png" width="80%" style="margin-top: -10px;"> 
+  </ion-nav-title>
+
+  <ion-content delegate-handle="mainScroll">
+    <div class="item-input-inset">
+      <label class="item-input-wrapper" >
+        <input type="text" placeholder="DIGITE SUA PESQUISA" ng-model="expres" style="height: 50px;">
+      </label>
+      <a href="" class="button icon-left ion-search button-clear button-dark" ng-click="pesquisar(expres)"> </a>
+    </div>
+
+
+<ion-list>
+      <ion-item 
+              class="item-remove-animate item-avatar item-icon-right item-text-wrap" 
+              ng-repeat="nome in nomes | filter:pesquisa | orderBy:'posicao'"  
+              type="item-text-wrap" 
+              href="#/tab/dash/{{nome.id}}*{{nome.strNome}}*{{nome.strTelefone1}}*{{nome.strTelefone2}}*{{nome.strTelefone3}}*{{nome.strEndereco}}*{{nome.pic}}"> 
+        <img ng-src="img/{{nome.pic}}">
+        <h2>{{nome.strNome}}</h2>
+        <p>{{nome.strTelefone1}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+</ion-list>
+
+ <div ng-if="erroi === '2'">
+    <div class="tela-erro" ng-show="(nomes | filter:pesquisa).length == 0">  
+      <!--  <span ng-init="abreaviso('Não foi encontrado nenhum item com esta expressão.')"></span> -->
+    </div>
+ </div>
+
+
+<div class="list card">
+  <div class="item item-image">
+    <img src="img/banners/banner_cellsystem.png">
+  </div>
+   <div class="item item-image">
+    <img src="img/banners/banner_maqgelar.png">
+  </div>
+  <div class="item item-image">
+    <img src="img/banners/space.png">
+  </div>
+</div>
+
+
+  </ion-content>
+</ion-view>
+
+
+ <div class="bar bar-footer" ng-show="rodape">
+   <button class="button button-large icon-left ion-nuclear button-full button-positive"  ng-click="limpapesquisa()">
+    Limpar Pesquisa
+  </button> 
+</div>
