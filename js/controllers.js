@@ -7,8 +7,7 @@ angular.module('starter.controllers', ['ionic'])
   $scope.rodape = false;
   $scope.nomes = ""; 
   $scope.erroi = "1";  
-
-
+  $scope.airlines = [];
   
     $scope.limpapesquisa = function (){
       $scope.pesquisa = "xxxx"; 
@@ -179,8 +178,7 @@ angular.module('starter.controllers', ['ionic'])
   $scope.chat = Chats.categorias($stateParams.chatId);
 })
 
-.controller('Segmentos', function($scope, $http, $ionicLoading) {
-  $scope.modal.hide();
+.controller('Segmentos', function($scope, $http, $ionicLoading) { 
   $ionicLoading.show({
             content: 'Carregando Unidades',
             animation: 'fade-in',

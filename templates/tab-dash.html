@@ -13,8 +13,12 @@
         <input type="text" placeholder="DIGITE SUA PESQUISA" ng-model="expres" style="height: 50px;">
       </label>
       <a href="" class="button icon-left ion-search button-clear button-dark" ng-click="pesquisar(expres)"> </a>
-    </div>
+       
 
+    </div>
+<div class="list">
+        <li class="item" ng-repeat="airline in airlines | filter:expres ">{{airline.name}}</li>
+      </div> 
 
 
  
