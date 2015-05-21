@@ -125,15 +125,20 @@ angular.module('starter.controllers', ['ionic'])
 
 .controller('DetalhesContatoSelecionado', function($scope, $stateParams, Chats, $ionicPopup, $window) {
   
-   $scope.favoritar = function (data){
-      
-      $scope.favo =   JSON.parse($window.localStorage && $window.localStorage.getItem('my-storage'));
-      
-      var itens   =   data.split("*"); 
-      $scope.favo.push({strNome:itens[1], strEndereco:itens[2], strTelefone1:itens[3], strTelefone2:itens[4], strTelefone3:itens[5], pic:itens[6]})
-       
+  $scope.favo = $window.localStorage && $window.localStorage.getItem('my-storage');
+  $scope.results = [ 
+      ];
 
-      $window.localStorage && $window.localStorage.setItem('my-storage', JSON.stringify($scope.favo));
+   $scope.favoritar = function (data){
+      var itens   =   data.split("*"); 
+     // $scope.favo.push({strNome:itens[1], strEndereco:itens[2], strTelefone1:itens[3], strTelefone2:itens[4], strTelefone3:itens[5], pic:itens[6]})
+        
+         $scope.results.push({strNome:itens[1], strEndereco:itens[2], strTelefone1:itens[3], strTelefone2:itens[4], strTelefone3:itens[5], pic:itens[6]})
+        
+          $scope.mensagemfavoritos = true;     
+          localStorage["names"] = JSON.stringify($scope.results);      
+         $window.localStorage && $window.localStorage.setItem('my-storage', localStorage["names"]);
+          
     return $ionicPopup.alert({
                        title: 'ATENÇÃO.',
                        template: 'Você incluiu <b>'+itens[1]+'</b> na sua lista de favoritos.<br><br> Para você visualizar sua lista de favoritos, acesso o menu suspenso e toque em FAVORITOS.'
@@ -263,9 +268,9 @@ angular.module('starter.controllers', ['ionic'])
   $scope.fechajanela = function(){
     return $scope.modal.hide(); 
     } 
-    $scope.post = JSON.parse($window.localStorage && $window.localStorage.getItem('my-storage') || '{}');    
- 
- 
+  
+    $scope.post = Chats.favoritos();
+  
 })
 
 .controller('SegmentosDetalhes', function($scope, $http, $stateParams, Chats, $ionicLoading) {

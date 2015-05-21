@@ -14,16 +14,11 @@
         SEUS NÚMEROS FAVORITOS
       </div>
     </div>
-
- <ion-refresher
-    pulling-text="Puxe para atualizar a lista..."
-    on-refresh="doRefresh()">
-  </ion-refresher>
-
+ 
 <ion-list>
       <ion-item 
               class="item-icon-right item-text-wrap" 
-              ng-repeat="nome in post"  
+              ng-repeat="nome in post track by $index"  
               type="item-text-wrap" 
               href="#/tab/favoritos/{{nome.id}}*{{nome.strNome}}*{{nome.strTelefone1}}*{{nome.strTelefone2}}*{{nome.strTelefone3}}*{{nome.strEndereco}}*{{nome.pic}}"> 
         

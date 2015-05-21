@@ -1,11 +1,14 @@
 angular.module('starter.services', [])
 
-.factory('Chats', function($http) {
+.factory('Chats', function($http, $window) {
   var chats = $http.get('data/todos.json')                  
                   .then(        
                       function(res){   
                        return res.data;  
                        }); 
+  var favoritos =  $window.localStorage && $window.localStorage.getItem('my-storage');   
+
+
   return {
     all: function() {
       return chats;
@@ -67,6 +70,11 @@ angular.module('starter.services', [])
       }    
       return results;
     },
+
+    favoritos: function() {     
+     return JSON.parse(favoritos);
+    },
+
     get: function(chatId) {
       var itens = chatId.split("*"); 
                              var detalheContato = [
