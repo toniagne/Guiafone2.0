@@ -71,6 +71,20 @@ angular.module('starter.services', [])
       return results;
     },
 
+     listagemenderecos: function(text) {     
+     var conteudo = chats.$$state.value;
+     var results = []; 
+
+     for(var i=0; i<conteudo.length; i++) {
+        for(key in conteudo[i]) {
+          if(conteudo[i][key].indexOf(text)!=-1) {
+              results.push(conteudo[i]);            
+          }    
+        }
+      }    
+      return results;
+    },
+
     favoritos: function() {     
      return JSON.parse(favoritos);
     },

@@ -1,6 +1,24 @@
 angular.module('starter.controllers', ['ionic'])
 
+.run(function($ionicPlatform, $rootScope) {
+  $ionicPlatform.ready(function() { 
+
+     $rootScope.$on('$stateChangeSuccess', function (event) {
+            
+            setTimeout(function() {
+            $rootScope.splash = false;
+            console.log('fecha');
+            }, 2000);
+          });
+    
+ });
+})
+
 .controller('DashCtrl', function($scope, $http, $ionicScrollDelegate, Chats, $ionicPopup, $ionicLoading) {
+ setTimeout(function() {             
+            console.log($scope.splash);
+            }, 2100);
+
 
   $scope.pesquisa = "xxxx";    
   $scope.expres = "";
@@ -11,7 +29,7 @@ angular.module('starter.controllers', ['ionic'])
   
     $scope.limpapesquisa = function (){
       $scope.pesquisa = "xxxx"; 
-      $scope.expres = "";
+      $scope.expres = "testes"; 
       $scope.nomes = ""; 
       $scope.erroi = "1";  
       $scope.rodape = false;
@@ -26,7 +44,8 @@ angular.module('starter.controllers', ['ionic'])
                      });
     }
 
-    $scope.pesquisar = function(text)  {          
+    $scope.pesquisar = function(text)  {    
+
           $ionicLoading.show({
             content: 'Carregando Unidades',
             animation: 'fade-in',
@@ -69,23 +88,26 @@ angular.module('starter.controllers', ['ionic'])
 }) 
 
 .controller('ChatsCtrl', function($scope, Chats, $ionicScrollDelegate, $http, $ionicLoading) {
-    $scope.nomes  = "";  
+
+    $scope.nomes  = ""; 
+
     $scope.rodape = false;
     $scope.numero = false;
-    $scope.erroi = "1";  
-    $scope.expres = "";
+    $scope.erroi = "1";   
 
     $scope.inserirnumero = function(nomerua){
       $scope.enderecoselecionado = nomerua;
+      $scope.rodape = true;
       $scope.numero = true;
     }
 
     $scope.limpapesquisa = function (){
         $scope.pesquisa = "xxxx"; 
-        $scope.expres = "";
+        $scope.expres = "xxxx";
         $scope.nomes  = "";  
         $scope.erroi = "1";  
         $scope.rodape = false;
+        $scope.numero = false;
         $ionicScrollDelegate.$getByHandle('mainScroll').scrollTop();
       };
 
@@ -109,7 +131,7 @@ angular.module('starter.controllers', ['ionic'])
             showDelay: 0
           });
                
-                $scope.nomes = Chats.listagem($scope.pesquisa);
+                $scope.nomes = Chats.listagemenderecos($scope.pesquisa);
                 $scope.erroi = "2";  
                 $ionicLoading.hide(); 
                 $scope.rodape = true; 

@@ -10,3 +10,14 @@
   display: block !important;
   transition: all linear 300ms;
 }
+
+.splash {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width:100%; 
+    background: #000;
+    z-index: 9999999999;
+}

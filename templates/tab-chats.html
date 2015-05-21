@@ -18,15 +18,18 @@
       <label class="item-input-wrapper" >
         <input type="text" placeholder="DIGITE O NOME DA RUA" ng-model="expres" style="height: 50px;">
       </label> 
+      <span ng-init="expres = '  '"></span>
+      <a href="" class="button icon-left ion-android-cancel button-clear button-dark" ng-click="expres = '   '"> </a>
     </div>
 
 
 <ion-list>
       <ion-item 
-              class="item-icon-right item-text-wrap" 
-              ng-repeat="rua in enderecos | filter:expres | limitTo: 15"  
+              class="item-icon-right item-text-wrap " 
+              ng-repeat="rua in enderecos | filter:expres  | limitTo: 5"  
               type="item-text-wrap" 
-              ng-click="inserirnumero(rua.strEndereco);">  
+              ng-click="inserirnumero(rua.strEndereco);"
+              can-swipe="true">  
         <h2>{{rua.strNome}}</h2>
         <i class="icon ion-chevron-right icon-accessory"></i> 
       </ion-item>
@@ -34,7 +37,7 @@
 
 <div class="item-input-inset" ng-show="numero">
       <label class="item-input-wrapper" >
-        <input type="text" placeholder="DIGITE O Nº" ng-model="numerorua" style="height: 50px;">
+        <input type="number" placeholder="DIGITE O Nº" ng-model="numerorua" style="height: 50px;">
       </label>
       <a href="" class="button icon-left ion-search button-clear button-dark" ng-click="pesquisar(numerorua)"> </a>
 </div>
@@ -61,3 +64,8 @@
   </ion-content>
 </ion-view>
 
+ <div class="bar bar-footer" ng-show="rodape" >
+   <button class="button button-large icon-left ion-nuclear button-full button-positive" style="margin-top: -5px;" ng-click="limpapesquisa()">
+    LIMPAR PESQUISA
+  </button> 
+</div>
