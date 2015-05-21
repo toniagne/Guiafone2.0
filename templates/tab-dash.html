@@ -21,7 +21,7 @@
 <ion-list>
       <ion-item 
               class="item-icon-right item-text-wrap" 
-              ng-repeat="nome in nomes"  
+              ng-repeat="nome in nomes track by $index"  
               type="item-text-wrap" 
               href="#/tab/dash/{{nome.id}}*{{nome.strNome}}*{{nome.strTelefone1}}*{{nome.strTelefone2}}*{{nome.strTelefone3}}*{{nome.strEndereco}}*{{nome.pic}}"> 
         
@@ -29,13 +29,7 @@
         <p>{{nome.strTelefone1}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
-</ion-list>
-
- <div ng-if="erroi === '2'">
-    <div class="tela-erro" ng-show="(nomes | filter:pesquisa).length == 0">  
-      <!--  <span ng-init="abreaviso('Não foi encontrado nenhum item com esta expressão.')"></span> -->
-    </div>
- </div>
+</ion-list> 
 
 
  

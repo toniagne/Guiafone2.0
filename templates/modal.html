@@ -4,37 +4,32 @@
         <button class="button button-icon button-clear ion-close-round" ng-click="modal.hide()"></button>
       </ion-header-bar>
       
-      <ion-content class="padding">
+      <ion-content class="padding" ng-controller="Favoritos">
         
         <div class="list">
-
-
-          <a class="item item-icon-left item-icon-right" ng-click="showPopup()">
+          <a class="item item-icon-left item-icon-right" ng-click="fechajanela()" href="#/tab/servicos/favoritos">
             <i class="icon  ion-chatbubble-working"></i>
             Sugestões
             <i class="icon ion-arrow-right-c"></i>
-          </a>
-           
+          </a>           
 
-           <a class="item item-icon-left item-icon-right" href="#/tab/segmentos/cadastro">
+           <a class="item item-icon-left item-icon-right" ng-click="fechajanela()" href="#/tab/servicos/cadastro">
             <i class="icon ion-paper-airplane"></i>
             Seu nome no GuiafoneJP
             <i class="icon ion-arrow-right-c"></i>
           </a>
 
-          <a class="item item-icon-left item-icon-right" href="#/tab/segmentos/configuracoes">
+          <a class="item item-icon-left item-icon-right" ng-click="fechajanela()" href="#/tab/servicos/configuracoes">
             <i class="icon ion-gear-b"></i>
             Conf. do Aplicativo
             <i class="icon ion-arrow-right-c"></i>
           </a>
 
-          <a class="item item-icon-left item-icon-right" href="#/tab/segmentos/favoritos">
+          <a class="item item-icon-left item-icon-right" ng-click="fechajanela()" href="#/tab/servicos/favoritos">
             <i class="icon ion-android-favorite"></i>
             Favoritos
             <i class="icon ion-arrow-right-c"></i>
-          </a>
-
-       </div>
-
+          </a> 
+       </div> 
       </ion-content>
     </div>

@@ -7,13 +7,31 @@
       <img src="img/logo.png" width="80%" style="margin-top: -10px;"> 
   </ion-nav-title>
 
-  <ion-content> 
+  <ion-content ng-controller="Favoritos"> 
   
      <div class="card">
       <div class="item item-divider">
-        SUGESTÕES
+        SEUS NÚMEROS FAVORITOS
       </div>
     </div>
+
+ <ion-refresher
+    pulling-text="Puxe para atualizar a lista..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+
+<ion-list>
+      <ion-item 
+              class="item-icon-right item-text-wrap" 
+              ng-repeat="nome in post"  
+              type="item-text-wrap" 
+              href="#/tab/favoritos/{{nome.id}}*{{nome.strNome}}*{{nome.strTelefone1}}*{{nome.strTelefone2}}*{{nome.strTelefone3}}*{{nome.strEndereco}}*{{nome.pic}}"> 
+        
+        <h2>{{nome.strNome}}</h2>
+        <p>{{nome.strTelefone1}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+</ion-list> 
 
 
   </ion-content>

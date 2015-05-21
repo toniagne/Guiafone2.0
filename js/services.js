@@ -14,26 +14,61 @@ angular.module('starter.services', [])
       return chats;
     },
     listagem: function(text) {
+      function replaceSpecialChars(str)
+            {
+                str = str.replace(/[ÀÁÂÃÄÅ]/,"A");
+                str = str.replace(/[àáâãäå]/,"a");
+                str = str.replace(/[ÈÉÊË]/,"E");
+                str = str.replace(/[Ç]/,"C");
+                str = str.replace(/[ç]/,"c"); 
+                return str.replace(/[^a-z0-9]/gi,''); 
+            }
+
      var conteudo = chats.$$state.value;
      var results = [];
 
      var itens = text.split(" ");  
-     var termo1 = itens[0];
+     var termo1 = replaceSpecialChars(itens[0]);
      var termo2 = itens[1];
 
+     if (!termo2){
       for(var i=0; i<conteudo.length; i++) {
         for(key in conteudo[i]) {
-          if(conteudo[i][key].indexOf(termo1)!=-1 || conteudo[i][key].indexOf(termo2)!=-1) {
+          if(conteudo[i][key].indexOf(termo1)!=-1) {
               results.push(conteudo[i]);            
           }    
         }
       } 
+     }
+     else if (!termo1){
+
+     } else{
+      for(var i=0; i<conteudo.length; i++) {
+        for(key in conteudo[i]) {
+          if(conteudo[i][key].indexOf(termo1)!=-1 && conteudo[i][key].indexOf(termo2)!=-1) {
+              results.push(conteudo[i]);            
+          }    
+        }
+      } 
+     }
+      
 
 
       return results;
     },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
+
+    listagemCategorias: function(text) {     
+     var conteudo = chats.$$state.value;
+     var results = []; 
+
+     for(var i=0; i<conteudo.length; i++) {
+        for(key in conteudo[i]) {
+          if(conteudo[i][key].indexOf(text)!=-1) {
+              results.push(conteudo[i]);            
+          }    
+        }
+      }    
+      return results;
     },
     get: function(chatId) {
       var itens = chatId.split("*"); 

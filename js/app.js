@@ -66,39 +66,48 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-  .state('tab.segmentos-sugestoes', {
-    url: '/segmentos/sugestoes',
+  .state('tab.servicos-sugestoes', {
+    url: '/servicos/sugestoes',
     views: {
-      'tab-segmentos': {
+      'tab-servicos': {
         templateUrl: 'templates/sugestoes.html',
         controller: 'Sugestoes'
       }
     }
   })
-  .state('tab.segmentos-cadastro', {
-    url: '/segmentos/cadastro',
+  .state('tab.servicos-cadastro', {
+    url: '/servicos/cadastro',
     views: {
-      'tab-segmentos': {
+      'tab-servicos': {
         templateUrl: 'templates/cadastro.html',
         controller: 'Cadastro'
       }
     }
   })
-  .state('tab.segmentos-configuracoes', {
-    url: '/segmentos/configuracoes',
+  .state('tab.servicos-configuracoes', {
+    url: '/servicos/configuracoes',
     views: {
-      'tab-segmentos': {
+      'tab-servicos': {
         templateUrl: 'templates/configuracoes.html',
         controller: 'Configuracoes'
       }
     }
   })
-  .state('tab.segmentos-favoritos', {
-    url: '/segmentos/favoritos',
+  .state('tab.servicos-favoritos', {
+    url: '/servicos/favoritos',
     views: {
-      'tab-segmentos': {
+      'tab-servicos': {
         templateUrl: 'templates/favoritos.html',
         controller: 'Favoritos'
+      }
+    }
+  })
+  .state('tab.servicos-detalhes-contato', {
+    url: '/favoritos/:chatId',
+    views: {
+      'tab-servicos': {
+        templateUrl: 'templates/tab-dash-detalhes.html',
+        controller: 'DetalhesContatoSelecionado'
       }
     }
   })
