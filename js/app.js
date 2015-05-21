@@ -102,6 +102,45 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+  .state('tab.servicos-sobre', {
+    url: '/servicos/sobre',
+    views: {
+      'tab-servicos': {
+        templateUrl: 'templates/sobre.html',
+        controller: 'Configuracoes'
+      }
+    }
+  })
+    .state('tab.servicos-termos', {
+    url: '/servicos/termos',
+    views: {
+      'tab-servicos': {
+        templateUrl: 'templates/termos.html',
+        controller: 'Configuracoes'
+      }
+    }
+  })
+    .state('tab.servicos-anuncie', {
+    url: '/servicos/anuncie',
+    views: {
+      'tab-servicos': {
+        templateUrl: 'templates/anuncie.html',
+        controller: 'Anuncie'
+      }
+    }
+  })
+    .state('tab.servicos-sistema', {
+    url: '/servicos/sistema',
+    views: {
+      'tab-servicos': {
+        templateUrl: 'templates/sistema.html',
+        controller: 'Configuracoes'
+      }
+    }
+  })
+
+
+
   .state('tab.servicos-detalhes-contato', {
     url: '/favoritos/:chatId',
     views: {

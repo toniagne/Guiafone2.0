@@ -123,15 +123,17 @@ angular.module('starter.controllers', ['ionic'])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('DetalhesContatoSelecionado', function($scope, $stateParams, Chats, $ionicPopup) {
+.controller('DetalhesContatoSelecionado', function($scope, $stateParams, Chats, $ionicPopup, $window) {
   
    $scope.favoritar = function (data){
- 
-      $scope.favo = JSON.parse(window.localStorage['post']);
-      var itens = data.split("*"); 
+      
+      $scope.favo =   JSON.parse($window.localStorage && $window.localStorage.getItem('my-storage'));
+      
+      var itens   =   data.split("*"); 
       $scope.favo.push({strNome:itens[1], strEndereco:itens[2], strTelefone1:itens[3], strTelefone2:itens[4], strTelefone3:itens[5], pic:itens[6]})
-      window.localStorage['post'] = JSON.stringify($scope.favo);
+       
 
+      $window.localStorage && $window.localStorage.setItem('my-storage', JSON.stringify($scope.favo));
     return $ionicPopup.alert({
                        title: 'ATENÇÃO.',
                        template: 'Você incluiu <b>'+itens[1]+'</b> na sua lista de favoritos.<br><br> Para você visualizar sua lista de favoritos, acesso o menu suspenso e toque em FAVORITOS.'
@@ -140,23 +142,128 @@ angular.module('starter.controllers', ['ionic'])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('Sugestoes', function($scope, $stateParams, Chats) {
-  $scope.nomes  = "";    
+.controller('Sugestoes', function($scope, $stateParams, Chats, $http, $ionicPopup, $ionicLoading) {
+ 
+ $scope.submit = function(contactform, formData) {
+    $ionicLoading.show({
+            content: 'Carregando Unidades',
+            animation: 'fade-in',
+            showBackdrop: true,
+            maxWidth: 200,
+            showDelay: 0
+          });
+            if (contactform.$valid) {             
+                $http({
+                    method  : 'POST',
+                    url     : 'http://www.renies.com.br/enviaemail/?telefone='+formData['telefone']+'&email='+formData['email']+'&assunto='+formData['assunto']+'&texto='+formData['texto'],
+                    data    : $scope.formData,  //param method from jQuery //set the headers so angular passing info as form data (not request payload)
+                }).success(function(data){
+                      $ionicLoading.hide(); 
+                      return $ionicPopup.alert({
+                       title: 'ATENÇÃO.',
+                       template: 'Sua mensagem foi enviada com sucesso !<br><br> Em breve entraremos em contato.'
+                     });
+                    
+                }).error(function(data){
+                  $ionicLoading.hide(); 
+                  return $ionicPopup.alert({
+                       title: 'ERRO.',
+                       template: 'Houve um erro no envio, verifique sua conexão, ou tente novamente.'
+                     });
+                });
+            } else {
+                return $ionicPopup.alert({
+                       title: 'ERRO.',
+                       template: 'Houve um erro no envio, verifique sua conexão, ou tente novamente.'
+                     });
+            }
+        }})
+
+.controller('Cadastro', function($scope, $stateParams, $http, $ionicLoading, $ionicPopup) {
+    $scope.submit = function(contactform, formData) {
+    $ionicLoading.show({
+            content: 'Carregando Unidades',
+            animation: 'fade-in',
+            showBackdrop: true,
+            maxWidth: 200,
+            showDelay: 0
+          });
+            if (contactform.$valid) {             
+                $http({
+                    method  : 'POST',
+                    url     : 'http://www.renies.com.br/enviaemail/?telefone='+formData['telefone']+'&email='+formData['email']+'&nome='+formData['nome']+'&texto='+formData['texto']+'&texto='+formData['endereco']+'&telefone2='+formData['telefone2']+'&telefone3='+formData['telefone3'],
+                    data    : $scope.formData,  //param method from jQuery //set the headers so angular passing info as form data (not request payload)
+                }).success(function(data){
+                      $ionicLoading.hide(); 
+                      return $ionicPopup.alert({
+                       title: 'ATENÇÃO.',
+                       template: 'Sua mensagem foi enviada com sucesso !<br><br> Em breve entraremos em contato.'
+                     });
+                    
+                }).error(function(data){
+                  $ionicLoading.hide(); 
+                  return $ionicPopup.alert({
+                       title: 'ERRO.',
+                       template: 'Houve um erro no envio, verifique sua conexão, ou tente novamente.'
+                     });
+                });
+            } else {
+                return $ionicPopup.alert({
+                       title: 'ERRO.',
+                       template: 'Houve um erro no envio, verifique sua conexão, ou tente novamente.'
+                     });
+            }
+        }
 })
 
-.controller('Cadastro', function($scope, $stateParams, Chats) {
-  $scope.nomes  = "";   
+.controller('Anuncie', function($scope, $stateParams, $http, $ionicLoading, $ionicPopup) {
+    $scope.submit = function(contactform, formData) {
+    $ionicLoading.show({
+            content: 'Carregando Unidades',
+            animation: 'fade-in',
+            showBackdrop: true,
+            maxWidth: 200,
+            showDelay: 0
+          });
+            if (contactform.$valid) {             
+                $http({
+                    method  : 'POST',
+                    url     : 'http://www.renies.com.br/enviaemail/?telefone='+formData['telefone']+'&email='+formData['email']+'&nome='+formData['nome']+'&texto='+formData['texto']+'&texto='+formData['endereco']+'&telefone2='+formData['telefone2']+'&telefone3='+formData['telefone3'],
+                    data    : $scope.formData,  //param method from jQuery //set the headers so angular passing info as form data (not request payload)
+                }).success(function(data){
+                      $ionicLoading.hide(); 
+                      return $ionicPopup.alert({
+                       title: 'ATENÇÃO.',
+                       template: 'Sua mensagem foi enviada com sucesso !<br><br> Em breve entraremos em contato.'
+                     });
+                    
+                }).error(function(data){
+                  $ionicLoading.hide(); 
+                  return $ionicPopup.alert({
+                       title: 'ERRO.',
+                       template: 'Houve um erro no envio, verifique sua conexão, ou tente novamente.'
+                     });
+                });
+            } else {
+                return $ionicPopup.alert({
+                       title: 'ERRO.',
+                       template: 'Houve um erro no envio, verifique sua conexão, ou tente novamente.'
+                     });
+            }
+        }
 })
 
 .controller('Configuracoes', function($scope, $stateParams, Chats) {
-  $scope.nomes  = "";   
+  $scope.nomes  = "";  
+  $scope.versao = "2.0";
+  $scope.mes = "Abril/2015"; 
 })
 
-.controller('Favoritos', function($scope, $stateParams, Chats, $ionicModal, $http) {
+.controller('Favoritos', function($scope, $stateParams, Chats, $ionicModal, $http, $window) {
   $scope.fechajanela = function(){
     return $scope.modal.hide(); 
     } 
-    $scope.post = JSON.parse(window.localStorage['post'] || '{}');    
+    $scope.post = JSON.parse($window.localStorage && $window.localStorage.getItem('my-storage') || '{}');    
  
  
 })

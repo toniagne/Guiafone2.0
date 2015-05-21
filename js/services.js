@@ -1,14 +1,11 @@
 angular.module('starter.services', [])
 
 .factory('Chats', function($http) {
-
   var chats = $http.get('data/todos.json')                  
                   .then(        
                       function(res){   
                        return res.data;  
                        }); 
- 
-
   return {
     all: function() {
       return chats;

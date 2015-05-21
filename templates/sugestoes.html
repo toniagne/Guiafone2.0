@@ -15,6 +15,37 @@
       </div>
     </div>
 
+ <form method="post" ng-submit="submit(contactform, formData)" name="contactform" role="form">
+<label class="item item-input  item-select">
+    <div class="input-label">
+      ASSUNTO
+    </div>
+    <select name="assunto" ng-model="formData.assunto">
+    <option>SELECIONE O ASSUNTO</option>
+    <option value="PESSOA FÍSICA NÃO ENCONTRADA">PESSOA FÍSICA NÃO ENCONTRADA</option>
+    <option value="EMPRESA NÃO ENCONTRADA">EMPRESA NÃO ENCONTRADA</option>
+    <option value="SEGMENTO NÃO ENCONTRADO">SEGMENTO NÃO ENCONTRADO</option>
+    <option value="OUTROS ASSUNTOS">OUTROS ASSUNTOS</option>
+</select>
+  </label>
+
+<div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">TELEFONE</span>
+    <input type="text" ng-model="formData.telefone" placeholder="5137229634">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">MENSAGEM</span>
+    <textarea ng-model="formData.texto"></textarea>
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">E-MAIL</span>
+    <input type="text" ng-model="formData.email" placeholder="guiafonejp@jornaldopovo.com.br">
+  </label>
+   <button class="button button-block button-positive">
+  ENVIAR
+</button>
+</div>
 
   </ion-content>
 </ion-view>
