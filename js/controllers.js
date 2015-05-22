@@ -1,25 +1,19 @@
 angular.module('starter.controllers', ['ionic'])
 
 .run(function($ionicPlatform, $rootScope) {
-  $ionicPlatform.ready(function() { 
-
-     $rootScope.$on('$stateChangeSuccess', function (event) {
-            
-            setTimeout(function() {
-            $rootScope.splash = false;
-            console.log('fecha');
-            }, 2000);
-          });
+  $ionicPlatform.ready(function() {  
     
  });
 })
 
+.controller('Abertura', function($scope, $stateParams, $location) {
+ setTimeout(function () 
+       {          
+            $location.path('/tab/dash');     
+       }, 1000);
+})
+
 .controller('DashCtrl', function($scope, $http, $ionicScrollDelegate, Chats, $ionicPopup, $ionicLoading) {
- setTimeout(function() {             
-            console.log($scope.splash);
-            }, 2100);
-
-
   $scope.pesquisa = "xxxx";    
   $scope.expres = "";
   $scope.rodape = false;
@@ -153,13 +147,8 @@ angular.module('starter.controllers', ['ionic'])
 
    $scope.favoritar = function (data){
       var itens   =   data.split("*"); 
-     // $scope.favo.push({strNome:itens[1], strEndereco:itens[2], strTelefone1:itens[3], strTelefone2:itens[4], strTelefone3:itens[5], pic:itens[6]})
-        
-         $scope.results.push({strNome:itens[1], strEndereco:itens[2], strTelefone1:itens[3], strTelefone2:itens[4], strTelefone3:itens[5], pic:itens[6]})
-        
-          $scope.mensagemfavoritos = true;     
-          localStorage["names"] = JSON.stringify($scope.results);      
-         $window.localStorage && $window.localStorage.setItem('my-storage', localStorage["names"]);
+      var arrObjetos = [{strNome:itens[1], strEndereco:itens[2], strTelefone1:itens[3], strTelefone2:itens[4], strTelefone3:itens[5], pic:itens[6]}];
+      return Chats.incluiFavoritos(arrObjetos);    
           
     return $ionicPopup.alert({
                        title: 'ATENÇÃO.',

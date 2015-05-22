@@ -13,6 +13,16 @@ angular.module('starter.services', [])
     all: function() {
       return chats;
     },
+    incluiFavoritos: function(itens){ 
+     var favoritosObject = JSON.parse(favoritos);
+     var arrFavoritos = [];
+     var resultado = favoritosObject.push(itens[0])
+    
+
+     localStorage["names"] = JSON.stringify(favoritosObject);      
+     $window.localStorage && $window.localStorage.setItem('my-storage', localStorage["names"]);
+    },
+
     listagem: function(text) {
       function replaceSpecialChars(str)
             {
