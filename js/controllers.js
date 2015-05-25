@@ -20,6 +20,8 @@ angular.module('starter.controllers', ['ionic'])
   $scope.nomes = ""; 
   $scope.erroi = "1";  
   $scope.airlines = [];
+  $scope.botaolimpador = false;
+  $scope.pesquisa = true;
   
     $scope.limpapesquisa = function (){
       $scope.pesquisa = "xxxx"; 
@@ -28,6 +30,8 @@ angular.module('starter.controllers', ['ionic'])
       $scope.erroi = "1";  
       $scope.rodape = false;
       $ionicScrollDelegate.$getByHandle('mainScroll').scrollTop();
+      $scope.botaolimpador = true;
+      $scope.pesquisa = false;
     };
 
     $scope.abreaviso = function(text){
@@ -39,7 +43,8 @@ angular.module('starter.controllers', ['ionic'])
     }
 
     $scope.pesquisar = function(text)  {    
-
+          $scope.botaolimpador = true;
+          $scope.pesquisa = false;
           $ionicLoading.show({
             content: 'Carregando Unidades',
             animation: 'fade-in',

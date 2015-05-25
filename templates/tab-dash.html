@@ -9,7 +9,8 @@
       <label class="item-input-wrapper" >
         <input type="text" placeholder="DIGITE SUA PESQUISA" ng-model="expres" style="height: 50px;">
       </label>
-      <a href="" class="button icon-left ion-search button-clear button-dark" ng-click="pesquisar(expres)"> </a>
+       <a href="" ng-show="botaolimpador" class="button icon-left ion-android-cancel button-clear button-dark" ng-click="expres = '   ';limpapesquisa()"> </a>
+      <a href="" ng-show="pesquisa" class="button icon-left ion-search button-clear button-dark" ng-click="pesquisar(expres)"> </a>
        
 
     </div>
@@ -35,13 +36,11 @@
 
  
  <br><Br>
- <div class="list list-inset">
-  <label class="item item-input">
+ 
+  <label class="item ">
     <i class="icon ion-android-star ion-flag"></i>
      Publicidade  
-  </label>
-</div>
- <div class="row">
+      <div class="row">
   <div class="col">
   <a href="#/tab/dash/0001*CellSystem computadores*37221000*37221177**7 de Setembro, 1500*business.png">
    <img src="img/banners/cellsystem-ico.png" width="100%">
@@ -58,6 +57,9 @@
    </a>
   </div>
   </div>
+  </label>
+ 
+
 
  
   </ion-content>
