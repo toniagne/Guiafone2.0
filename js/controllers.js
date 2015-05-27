@@ -139,7 +139,7 @@ angular.module('starter.controllers', ['ionic'])
    
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
+.controller('VerDetalhes', function($scope, $stateParams, Chats) {
   $scope.nomes  = "";  
   $scope.chat = Chats.get($stateParams.chatId);
 })
