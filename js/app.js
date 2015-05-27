@@ -21,6 +21,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 })
 
+.directive('backImg', function(){
+    return function(scope, element, attrs){
+        var url = attrs.backImg;
+        var content = element.find('a');
+        content.css({
+            'background': 'url(' + url +')',
+            'background-size' : 'cover'
+        });
+    }
+
 .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
