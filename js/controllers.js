@@ -202,6 +202,7 @@ angular.module('starter.controllers', ['ionic'])
 
 .controller('Cadastro', function($scope, $stateParams, $http, $ionicLoading, $ionicPopup) {
     $scope.submit = function(contactform, formData) {
+
     $ionicLoading.show({
             content: 'Carregando Unidades',
             animation: 'fade-in',
@@ -212,7 +213,7 @@ angular.module('starter.controllers', ['ionic'])
             if (contactform.$valid) {             
                 $http({
                     method  : 'POST',
-                    url     : 'http://www.renies.com.br/enviaemail/?telefone='+formData['telefone']+'&email='+formData['email']+'&nome='+formData['nome']+'&texto='+formData['texto']+'&texto='+formData['endereco']+'&telefone2='+formData['telefone2']+'&telefone3='+formData['telefone3'],
+                    url     : 'http://www.jornaldopovo.com.br/guiafoneApp/?telefone='+formData['telefone']+'&email='+formData['email']+'&nome='+formData['nome']+'&texto='+formData['observacao']+'&endereco='+formData['endereco']+'&telefone2='+formData['telefone1']+'&telefone3='+formData['telefone2'],
                     data    : $scope.formData,  //param method from jQuery //set the headers so angular passing info as form data (not request payload)
                 }).success(function(data){
                       $ionicLoading.hide(); 
@@ -234,6 +235,14 @@ angular.module('starter.controllers', ['ionic'])
                        template: 'Houve um erro no envio, verifique sua conexão, ou tente novamente.'
                      });
             }
+
+          formData['nome'] = null;
+          formData['endereco'] = null;
+          formData['telefone'] = null;
+          formData['telefone1'] = null;
+          formData['telefone2'] = null;
+          formData['email'] = null;
+          formData['observacao'] = null;
         }
 })
 
@@ -249,7 +258,7 @@ angular.module('starter.controllers', ['ionic'])
             if (contactform.$valid) {             
                 $http({
                     method  : 'POST',
-                    url     : 'http://www.renies.com.br/enviaemail/?telefone='+formData['telefone']+'&email='+formData['email']+'&nome='+formData['nome']+'&texto='+formData['texto']+'&texto='+formData['endereco']+'&telefone2='+formData['telefone2']+'&telefone3='+formData['telefone3'],
+                    url     : 'http://www.jornaldopovo.com.br/guiafoneApp/?telefone='+formData['telefone']+'&email='+formData['email']+'&nome='+formData['nome']+'&texto='+formData['texto']+'&texto='+formData['endereco']+'&telefone2='+formData['telefone2']+'&telefone3='+formData['telefone3'],
                     data    : $scope.formData,  //param method from jQuery //set the headers so angular passing info as form data (not request payload)
                 }).success(function(data){
                       $ionicLoading.hide(); 
@@ -271,6 +280,14 @@ angular.module('starter.controllers', ['ionic'])
                        template: 'Houve um erro no envio, verifique sua conexão, ou tente novamente.'
                      });
             }
+
+          formData['nome'] = null;
+          formData['endereco'] = null;
+          formData['telefone'] = null;
+          formData['telefone1'] = null;
+          formData['telefone2'] = null;
+          formData['email'] = null;
+          formData['observacao'] = null;
         }
 })
 
