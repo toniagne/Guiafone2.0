@@ -198,6 +198,10 @@ angular.module('starter.controllers', ['ionic'])
                        template: 'Houve um erro no envio, verifique sua conexão, ou tente novamente.'
                      });
             }
+            formData['assunto'] = null;
+          formData['telefone'] = null;
+          formData['texto'] = null;
+          formData['email'] = null;
         }})
 
 .controller('Cadastro', function($scope, $stateParams, $http, $ionicLoading, $ionicPopup) {
@@ -293,7 +297,7 @@ angular.module('starter.controllers', ['ionic'])
 
 .controller('Configuracoes', function($scope, $stateParams, Chats) {
   $scope.nomes  = "";  
-  $scope.versao = "2.0";
+  $scope.versao = "2.0.3";
   $scope.mes = "Abril/2015"; 
 })
 
