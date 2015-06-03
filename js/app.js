@@ -168,6 +168,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+    .state('tab.dash-publicidade-detalhes', {
+    url: '/dash/publicidade/:chatId',
+
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/tab-dash-detalhes.html', 
+        controller: 'DetalhesContatoSelecionado'
+      }
+    }
+  })    
 
   .state('tab.chats', {
       url: '/chats',

@@ -23,12 +23,13 @@
 <ion-list>
       <ion-item 
               class="item-icon-right item-text-wrap" 
-              ng-repeat="nome in nomes track by $index"  
+              ng-repeat="nome in nomes  |  orderBy:['posicao','strNome']"  
               type="item-text-wrap" 
               href="#/tab/dash/{{nome.id}}*{{nome.strNome}}*{{nome.strTelefone1}}*{{nome.strTelefone2}}*{{nome.strTelefone3}}*{{nome.strEndereco}}*{{nome.pic}}"> 
-        
-        <h2>{{nome.strNome}}</h2>
-        <p>{{nome.strTelefone1}}</p>
+        <img ng-if="nome.bitAtivo == 3" ng-src="img/banners/{{nome.pic}}" width="100%">
+        <h2><b ng-if="nome.bitAtivo == 2">{{nome.strNome}}</b></h2>
+        <h2 ng-if="nome.bitAtivo == 1">{{nome.strNome}}</h2>
+        <p  ng-if="nome.bitAtivo == 1">{{nome.strTelefone1}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
 </ion-list> 
@@ -40,24 +41,25 @@
   <label class="item ">
     <i class="icon ion-android-star ion-flag"></i>
      Publicidade  
+      </label>
       <div class="row">
   <div class="col">
-  <a href="#/tab/dash/0001*CellSystem computadores*37221000*37221177**7 de Setembro, 1500*business.png">
+  <a ng-href="#/tab/dash/publicidade/0001*CellSystem computadores*37221000*37221177**7 de Setembro 1500*business.png">
    <img src="img/banners/cellsystem-ico.png" width="100%">
    </a>
   </div>
   <div class="col">
-    <a href="#/tab/dash/0001*MAQGELAR REFRIGERAÇÃO, CLIMATIZAÇÃO E MÁQUINAS*37222420*92145303*95007018*Dnª Hermínia, 1975*business.png">
+    <a href="#/tab/dash/publicidade/0003*MAQGELAR REFRIGERAÇÃO, CLIMATIZAÇÃO E MÁQUINAS*37222420*92145303*95007018*Dn Hermínia, 1975*business.png">
    <img src="img/banners/maqgelar-ico.png" width="100%">
    </a>
   </div>
   <div class="col">
-   <a href="#/tab/dash/0001*CASA DO ALARME*37245422*97120837**A Borges, 879 02*business.png">
+   <a href="#/tab/dash/publicidade/0004*CASA DO ALARME*37245422*97120837**A Borges, 879 02*business.png">
    <img src="img/banners/casadoalarme-ico.png" width="100%">
    </a>
   </div>
   </div>
-  </label>
+
  
 
 

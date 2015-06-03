@@ -10,7 +10,7 @@ angular.module('starter.controllers', ['ionic'])
  setTimeout(function () 
        {          
             $location.path('/tab/dash');     
-       }, 1000);
+       }, 2000);
 })
 
 .controller('DashCtrl', function($scope, $http, $ionicScrollDelegate, Chats, $ionicPopup, $ionicLoading) {
@@ -30,8 +30,8 @@ angular.module('starter.controllers', ['ionic'])
       $scope.erroi = "1";  
       $scope.rodape = false;
       $ionicScrollDelegate.$getByHandle('mainScroll').scrollTop();
-      $scope.botaolimpador = true;
-      $scope.pesquisa = false;
+      $scope.botaolimpador = false;
+      $scope.pesquisa = true;
     };
 
     $scope.abreaviso = function(text){
@@ -153,12 +153,14 @@ angular.module('starter.controllers', ['ionic'])
    $scope.favoritar = function (data){
       var itens   =   data.split("*"); 
       var arrObjetos = [{strNome:itens[1], strEndereco:itens[2], strTelefone1:itens[3], strTelefone2:itens[4], strTelefone3:itens[5], pic:itens[6]}];
-      return Chats.incluiFavoritos(arrObjetos);    
-          
-    return $ionicPopup.alert({
+       Chats.incluiFavoritos(arrObjetos);  
+      return $ionicPopup.alert({
                        title: 'ATENÇÃO.',
                        template: 'Você incluiu <b>'+itens[1]+'</b> na sua lista de favoritos.<br><br> Para você visualizar sua lista de favoritos, acesso o menu suspenso e toque em FAVORITOS.'
                      });
+
+          
+    
     }
   $scope.chat = Chats.get($stateParams.chatId);
 })
