@@ -69,18 +69,18 @@ angular.module('starter.services', [])
 
     listagemCategorias: function(text) {  
 
-     var conteudoCategorias = chats.$$state.value;
-     var results2 = []; 
+     var conteudo = chats.$$state.value;
+     var results = []; 
 
-    for(var i=0; i<conteudoCategorias.length; i++) {
-      if (conteudoCategorias[i]['ramoAtividade'] == text){
-         console.log('aparece');
-      };
-         
-      } 
-      return results2;
-
-    },
+     for(var i=0; i<conteudo.length; i++) {
+        for(key in conteudo[i]) {
+          if(conteudo[i][key].indexOf(text)!=-1) {
+              results.push(conteudo[i]);            
+          }    
+        }
+      }    
+      return results; 
+      },
 
      listagemenderecos: function(text) {     
      var conteudo = chats.$$state.value;
