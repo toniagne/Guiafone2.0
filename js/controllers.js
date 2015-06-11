@@ -86,7 +86,7 @@ angular.module('starter.controllers', ['ionic'])
 
 }) 
 
-.controller('ChatsCtrl', function($scope, Chats, $ionicScrollDelegate, $http, $ionicLoading) {
+.controller('ChatsCtrl', function($scope, $rootScope, Chats, $ionicScrollDelegate, $http, $ionicLoading) {
 
     $scope.nomes  = ""; 
 
@@ -94,19 +94,27 @@ angular.module('starter.controllers', ['ionic'])
     $scope.numero = false;
     $scope.erroi = "1";   
 
+    $scope.update = function (test){
+      console.log(test);
+    }
+
     $scope.inserirnumero = function(nomerua){
       $scope.enderecoselecionado = nomerua;
       $scope.rodape = true;
-      $scope.numero = true;
+      $scope.numero = true; 
+      $scope.expres2 = nomerua;  
+
     }
 
     $scope.limpapesquisa = function (){
         $scope.pesquisa = "xxxx"; 
         $scope.expres = "xxxx";
+        $scope.expres2 = "";  
         $scope.nomes  = "";  
         $scope.erroi = "1";  
         $scope.rodape = false;
-        $scope.numero = false;
+        $scope.numero = false; 
+
         $ionicScrollDelegate.$getByHandle('mainScroll').scrollTop();
       };
 
@@ -122,6 +130,7 @@ angular.module('starter.controllers', ['ionic'])
 
     $scope.pesquisar = function(text)  { 
           $scope.pesquisa = $scope.enderecoselecionado+', '+text; 
+
           $ionicLoading.show({
             content: 'Carregando Unidades',
             animation: 'fade-in',
@@ -326,7 +335,7 @@ angular.module('starter.controllers', ['ionic'])
                 $ionicLoading.hide(); 
                 $scope.rodape = true;
 
-  $scope.chat = Chats.categorias($stateParams.chatId);
+ //$scope.chat = Chats.categorias($stateParams.chatId);
 })
 
 .controller('Segmentos', function($scope, $http, $ionicLoading) { 
