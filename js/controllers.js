@@ -308,7 +308,7 @@ angular.module('starter.controllers', ['ionic'])
 
 .controller('Configuracoes', function($scope, $stateParams, Chats) {
   $scope.nomes  = "";  
-  $scope.versao = "2.0.4";
+  $scope.versao = "2.0.6";
   $scope.mes = "Abril/2015"; 
 })
 

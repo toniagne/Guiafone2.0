@@ -27,7 +27,7 @@
               class="item-icon-right item-text-wrap" 
               ng-repeat="segmento in segmentos | filter:expres | limitTo: 15"  
               type="item-text-wrap" 
-              href="#/tab/segmentos/{{segmento.strNome}}"> 
+              href="#/tab/segmentos/{{segmento.id}}"> 
          
         <h2>{{segmento.strNome}}</h2> 
         <i class="icon ion-chevron-right icon-accessory"></i>
@@ -43,9 +43,11 @@
   </ion-content>
 </ion-view>
 
+<!--
  <div class="bar bar-footer" style="height:70px;">
     
       <div class="item item-image">
         <img src="img/banners/space.png">
       </div> 
 </div>
+-->

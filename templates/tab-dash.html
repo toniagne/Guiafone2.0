@@ -9,8 +9,8 @@
       <label class="item-input-wrapper" >
         <input type="text" placeholder="DIGITE SUA PESQUISA" ng-model="expres" style="height: 50px;">
       </label>
-       <a href="" ng-show="botaolimpador" class="button icon-left ion-android-cancel button-clear button-dark" ng-click="expres = '   ';limpapesquisa()"> </a>
-      <a href="" ng-show="pesquisa" class="button icon-left ion-search button-clear button-dark" ng-click="pesquisar(expres)"> </a>
+       <a href="" ng-show="botaolimpador" class="button icon-left ion-android-cancel button-clear button-dark" ng-click="limpapesquisa()"> </a>
+      <a href="" ng-show="pesquisa" class="button icon-left ion-search button-clear button-dark" ng-click="pesquisar(expres); expres = '';"> </a>
        
 
     </div>
@@ -63,14 +63,13 @@
   </div>
 -->
  
-
+ <div ng-show="rodape" >
+   <button class="button button-small icon-left ion-nuclear button-full button-positive" style="margin-top: -5px;" ng-click="limpapesquisa(); expres = '';">
+    LIMPAR PESQUISA
+  </button> 
+</div>
 
  
   </ion-content>
 </ion-view>  
 
- <div class="bar bar-footer" ng-show="rodape" >
-   <button class="button button-large icon-left ion-nuclear button-full button-positive" style="margin-top: -5px;" ng-click="limpapesquisa()">
-    LIMPAR PESQUISA
-  </button> 
-</div>
