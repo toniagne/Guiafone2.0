@@ -11,14 +11,16 @@
       </label>
        <a href="" ng-show="botaolimpador" class="button icon-left ion-android-cancel button-clear button-dark" ng-click="limpapesquisa()"> </a>
       <a href="" ng-show="pesquisa" class="button icon-left ion-search button-clear button-dark" ng-click="pesquisar(expres); expres = '';"> </a>
-       
-
-    </div>
-<div class="list">
+       <div class="list" ng-show="rodape">
         <li class="item" ng-repeat="airline in airlines | filter:expres ">{{airline.name}}</li>
       </div> 
 
+    </div>
 
+
+<button class="button button-outline button-positive">
+  Outlined Button
+</button>
 
 <ion-list>
       <ion-item 
