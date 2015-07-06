@@ -228,7 +228,7 @@ angular.module('starter.controllers', ['ionic'])
             if (contactform.$valid) {             
                 $http({
                     method  : 'POST',
-                    url     : 'http://www.jornaldopovo.com.br/guiafoneApp/?telefone='+formData['telefone']+'&email='+formData['email']+'&nome='+formData['nome']+'&texto='+formData['observacao']+'&endereco='+formData['endereco']+'&telefone2='+formData['telefone1']+'&telefone3='+formData['telefone2'],
+                    url     : 'http://www.jornaldopovo.com.br/guiafoneApp/inscrevase.php?telefone='+formData['telefone']+'&email='+formData['email']+'&nome='+formData['nome']+'&texto='+formData['observacao']+'&endereco='+formData['endereco']+'&telefone2='+formData['telefone1']+'&telefone3='+formData['telefone2'],
                     data    : $scope.formData,  //param method from jQuery //set the headers so angular passing info as form data (not request payload)
                 }).success(function(data){
                       $ionicLoading.hide(); 
