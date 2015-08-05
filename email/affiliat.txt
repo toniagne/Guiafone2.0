@@ -1,0 +1,6 @@
+About Purchase=http://www.internet-soft.com
+Support=http://www.internet-soft.com/support.htm
+About Support=http://www.internet-soft.com/support.htm
+About Support 2=http://www.internet-soft.com/support.htm
+Purchase=http://www.internet-soft.com
+program=http://www.internet-soft.com

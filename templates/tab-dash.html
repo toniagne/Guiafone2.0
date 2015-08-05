@@ -27,7 +27,7 @@
               ng-repeat="nome in nomes  |  orderBy:['posicao','strNome']"  
               type="item-text-wrap" 
               href="#/tab/dash/{{nome.id}}*{{nome.strNome}}*{{nome.strTelefone1}}*{{nome.strTelefone2}}*{{nome.strTelefone3}}*{{nome.strEndereco}}*{{nome.pic}}"> 
-        <img ng-if="nome.bitAtivo == 3" ng-src="img/banners/{{nome.pic}}" width="100%">
+        <img ng-if="nome.bitAtivo == 3" ng-src="img/banners/{{nome.pic}}" width="135%" style="margin-left: -10%;">
         <h2><b ng-if="nome.bitAtivo == 2">{{nome.strNome}}</b></h2>
         <h2 ng-if="nome.bitAtivo == 1">{{nome.strNome}}</h2>
         <p  ng-if="nome.bitAtivo == 1">{{nome.strTelefone1}}</p>
@@ -38,8 +38,8 @@
 
  
  <br><Br>
- 
-   <!-- 
+
+<!--
   <label class="item ">
     <i class="icon ion-android-star ion-flag"></i>
      Publicidade  
@@ -62,7 +62,7 @@
    </a>
   </div>
   </div>
--->
+ -->
  
  <div ng-show="rodape" >
    <button class="button button-small icon-left ion-nuclear button-full button-positive" style="margin-top: -5px;" ng-click="limpapesquisa(); expres = '';">
