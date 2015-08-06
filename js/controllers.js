@@ -155,6 +155,7 @@ angular.module('starter.controllers', ['ionic'])
 
 .controller('DetalhesContatoSelecionado', function($scope, $stateParams, Chats, $ionicPopup, $window) {
   
+
   $scope.favo = $window.localStorage && $window.localStorage.getItem('my-storage');
   $scope.results = [ 
       ];

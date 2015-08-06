@@ -15,9 +15,10 @@ angular.module('starter.services', [])
     },
     incluiFavoritos: function(itens){ 
 
-      console.log(itens);
+      
      var favoritosObject = JSON.parse(favoritos);
-     var favoritosObject = [];
+
+      console.log(favoritosObject);
      var resultado = favoritosObject.push(itens[0])
     
 
