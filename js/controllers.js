@@ -154,16 +154,19 @@ angular.module('starter.controllers', ['ionic'])
 })
 
 .controller('DetalhesContatoSelecionado', function($scope, $stateParams, Chats, $ionicPopup, $window) {
-  
+ 
 
   $scope.favo = $window.localStorage && $window.localStorage.getItem('my-storage');
   $scope.results = [ 
       ];
 
    $scope.favoritar = function (data){
+
       var itens   =   data.split("*"); 
       var arrObjetos = [{strNome:itens[1], strEndereco:itens[2], strTelefone1:itens[3], strTelefone2:itens[4], strTelefone3:itens[5], pic:itens[6]}];
        Chats.incluiFavoritos(arrObjetos);  
+
+
       return $ionicPopup.alert({
                        title: 'ATENÇÃO.',
                        template: 'Você incluiu <b>'+itens[1]+'</b> na sua lista de favoritos.<br><br> Para você visualizar sua lista de favoritos, acesso o menu suspenso e toque em FAVORITOS.'
@@ -313,7 +316,20 @@ angular.module('starter.controllers', ['ionic'])
   $scope.mes = "Julho/2015"; 
 })
 
-.controller('Favoritos', function($scope, $stateParams, Chats, $ionicModal, $http, $window) {
+.controller('Favoritos', function($scope, $stateParams, Chats, $ionicModal, $http, $window, $interval) {
+ 
+
+    $interval(function() {
+       //$window.location.reload();
+       $scope.count = 1;
+    }, 10000);
+
+    
+   $scope.stopTimer = function() {
+          $window.location.reload(false);
+    };
+
+ //  $window.location.reload();
   $scope.fechajanela = function(){
     return $scope.modal.hide(); 
     } 
