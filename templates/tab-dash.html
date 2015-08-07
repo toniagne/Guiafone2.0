@@ -6,11 +6,12 @@
 
   <ion-content delegate-handle="mainScroll">
     <div class="item-input-inset">
+    <a href="" ng-show="botaolimpador" class="button icon-left ion-android-cancel button-clear button-dark" ng-click="limpapesquisa()"> </a>
       <label class="item-input-wrapper" >
         <input type="text" placeholder="DIGITE SUA PESQUISA" ng-model="expres" style="height: 50px;">
       </label>
-       <a href="" ng-show="botaolimpador" class="button icon-left ion-android-cancel button-clear button-dark" ng-click="limpapesquisa()"> </a>
-      <a href="" ng-show="pesquisa" class="button icon-left ion-search button-clear button-dark" ng-click="pesquisar(expres); expres = '';"> </a>
+       
+      <a href="" class="button icon-left ion-search button-clear button-dark" ng-click="pesquisar(expres); expres = '';"> </a>
        <div class="list" ng-show="rodape">
         <li class="item" ng-repeat="airline in airlines | filter:expres ">{{airline.name}}</li>
       </div> 
