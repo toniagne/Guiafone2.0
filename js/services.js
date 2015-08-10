@@ -1,6 +1,6 @@
-angular.module('starter.services', [])
+angular.module('starter.services', ['ngStorage'])
 
-.factory('Chats', function($http, $window) {
+.factory('Chats',  function($http, $window, $localStorage) {
   var chats = $http.get('data/todos.json')                  
                   .then(        
                       function(res){   
@@ -13,15 +13,24 @@ angular.module('starter.services', [])
     all: function() {
       return chats;
     },
-    incluiFavoritos: function(itens){ 
- 
+
+    incluiFavoritos: function(itens){    
+
+       $localStorage.favoritando = JSON.stringify(itens[0]);
+
+
+    /*
      var favoritosObject = JSON.parse(favoritos);
      var favoritosObject = [];
      var resultado = favoritosObject.push(itens[0])
-    
-
+     localStorage.setItem("favoritos", favoritosObject);
+     $localStorage.favoritosNovo = resultado;
      localStorage["names"] = JSON.stringify(favoritosObject);      
      $window.localStorage && $window.localStorage.setItem('my-storage', localStorage["names"]);
+    */
+
+
+
     },
 
     listagem: function(text) {
@@ -97,8 +106,11 @@ angular.module('starter.services', [])
       return results;
     },
 
-    favoritos: function() {      
-     return JSON.parse(favoritos);
+    favoritos: function() {       
+    
+      console.log(JSON.parse($localStorage.favoritando));
+     return  JSON.parse($localStorage.favoritando);
+ 
     },
 
     get: function(chatId) {
