@@ -16,7 +16,7 @@ angular.module('starter.services', ['ngStorage'])
 
     incluiFavoritos: function(itens){    
 
-       $localStorage.favoritando = JSON.stringify(itens[0]);
+       //$localStorage.favoritando = JSON.stringify(itens[0]);
 
 
     /*
@@ -108,8 +108,8 @@ angular.module('starter.services', ['ngStorage'])
 
     favoritos: function() {       
     
-      console.log(JSON.parse($localStorage.favoritando));
-     return  JSON.parse($localStorage.favoritando);
+      //console.log(JSON.parse($localStorage.favoritando));
+     //return  JSON.parse($localStorage.favoritando);
  
     },
 

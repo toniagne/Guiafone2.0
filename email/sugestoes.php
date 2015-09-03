@@ -9,19 +9,16 @@ $emailsender='guiafonejp@jornaldopovo.com.br'; // Substitua essa linha pelo seu 
 $nomeremetente     = "APP GUIAFONE MOBILE";
 $emailremetente    = "guiafonejp@jornaldopovo.com.br";
 $emaildestinatario = "gilmar@jornaldopovo.com.br";
-$assunto           = "CONTATO VIA APP - INSCREVA-SE";
-$mensagem          = "CONTATO VINDO DO APP GUIAFONEMOBILE";
+$assunto           = "SUGESTÕES VIA APP";
+$mensagem          = "CONTATO VINDO DO APP - SUGESTÕES";
  
 
 /* Montando a mensagem a ser enviada no corpo do e-mail. */
-$mensagemHTML = '
-<p>NOME: <b><i>'.utf8_decode($_GET['nome']).'</i></b></p>
-<p>ENDERECO: <b><i>'.utf8_decode($_GET['endereco']).'</i></b></p>
-<p>FONE 1: <b><i>'.utf8_decode($_GET['telefone1']).'</i></b></p>
-<p>FONE 2: <b><i>'.utf8_decode($_GET['telefone2']).'</i></b></p>
-<p>FONE 3: <b><i>'.utf8_decode($_GET['telefone3']).'</i></b></p>
+$mensagemHTML = ' 
+<p>ASSUNTO: <b><i>'.utf8_decode($_GET['assunto']).'</i></b></p>
+<p>TELEFONE: <b><i>'.utf8_decode($_GET['telefone']).'</i></b></p>
 <p>E-MAIL: <b><i>'.utf8_decode($_GET['email']).'</i></b></p>
-<p>OBS: <b><i>'.utf8_decode($_GET['observacao']).'</i></b></p>
+<p>OBSERVACOES: <b><i>'.utf8_decode($_GET['texto']).'</i></b></p>
 <hr>';
  
  

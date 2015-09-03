@@ -7,8 +7,8 @@ else $quebra_linha = "\n"; //Se "nÃ£o for Windows"
 $emailsender='contato@renies.com.br'; // Substitua essa linha pelo seu e-mail@seudominio
 // Passando os dados obtidos pelo formulário para as variáveis abaixo
 $nomeremetente     = "APP GUIAFONE MOBILE";
-$emailremetente    = "contato@renies.com.br";
-$emaildestinatario = "gilmar@jornaldopovo.com.br";
+$emailremetente    = "ddd37@artemaiz.com.br";
+$emaildestinatario = "toniagne@gmail.com";
 $assunto           = "CONTATO VIA APP";
 $mensagem          = "CONTATO VINDO DO APP GUIAFONEMOBILE";
  

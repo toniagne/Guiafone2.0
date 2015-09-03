@@ -4,24 +4,23 @@
 if(PATH_SEPARATOR == ";") $quebra_linha = "\r\n"; //Se for Windows
 else $quebra_linha = "\n"; //Se "nÃ£o for Windows"
 
-$emailsender='guiafonejp@jornaldopovo.com.br'; // Substitua essa linha pelo seu e-mail@seudominio
+$emailsender='contato@renies.com.br'; // Substitua essa linha pelo seu e-mail@seudominio
 // Passando os dados obtidos pelo formulário para as variáveis abaixo
 $nomeremetente     = "APP GUIAFONE MOBILE";
-$emailremetente    = "guiafonejp@jornaldopovo.com.br";
+$emailremetente    = "contato@renies.com.br";
 $emaildestinatario = "gilmar@jornaldopovo.com.br";
-$assunto           = "CONTATO VIA APP - INSCREVA-SE";
-$mensagem          = "CONTATO VINDO DO APP GUIAFONEMOBILE";
+$assunto           = "ANUNCIE VIA APP";
+$mensagem          = "CONTATO VINDO DO APP - ANUNCIE";
  
 
 /* Montando a mensagem a ser enviada no corpo do e-mail. */
 $mensagemHTML = '
 <p>NOME: <b><i>'.utf8_decode($_GET['nome']).'</i></b></p>
-<p>ENDERECO: <b><i>'.utf8_decode($_GET['endereco']).'</i></b></p>
-<p>FONE 1: <b><i>'.utf8_decode($_GET['telefone1']).'</i></b></p>
-<p>FONE 2: <b><i>'.utf8_decode($_GET['telefone2']).'</i></b></p>
-<p>FONE 3: <b><i>'.utf8_decode($_GET['telefone3']).'</i></b></p>
+<p>ENDEREÇO: <b><i>'.utf8_decode($_GET['endereco']).'</i></b></p>
+
+<p>TELEFONE: <b><i>'.utf8_decode($_GET['telefone']).'</i></b></p>
 <p>E-MAIL: <b><i>'.utf8_decode($_GET['email']).'</i></b></p>
-<p>OBS: <b><i>'.utf8_decode($_GET['observacao']).'</i></b></p>
+<p>OBSERVAÇÕES: <b><i>'.utf8_decode($_GET['observacao']).'</i></b></p>
 <hr>';
  
  

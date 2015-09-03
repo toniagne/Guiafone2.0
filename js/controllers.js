@@ -179,7 +179,12 @@ angular.module('starter.controllers', ['ionic'])
 })
 
 .controller('Sugestoes', function($scope, $stateParams, Chats, $http, $ionicPopup, $ionicLoading) {
- 
+ $scope.veritem = false;
+
+ $scope.exibedetalhes = function (){
+  $scope.veritem = true;
+ }
+
  $scope.submit = function(contactform, formData) {
     $ionicLoading.show({
             content: 'Carregando Unidades',
@@ -191,7 +196,7 @@ angular.module('starter.controllers', ['ionic'])
             if (contactform.$valid) {             
                 $http({
                     method  : 'POST',
-                    url     : 'http://www.renies.com.br/enviaemail/?telefone='+formData['telefone']+'&email='+formData['email']+'&assunto='+formData['assunto']+'&texto='+formData['texto'],
+                    url     : 'http://www.jornaldopovo.com.br/guiafoneApp/sugestoes.php?telefone='+formData['telefone']+'&email='+formData['email']+'&assunto='+formData['assunto']+'&texto='+formData['texto'],
                     data    : $scope.formData,  //param method from jQuery //set the headers so angular passing info as form data (not request payload)
                 }).success(function(data){
                       $ionicLoading.hide(); 
@@ -232,7 +237,7 @@ angular.module('starter.controllers', ['ionic'])
             if (contactform.$valid) {             
                 $http({
                     method  : 'POST',
-                    url     : 'http://www.jornaldopovo.com.br/guiafoneApp/inscrevase.php?telefone='+formData['telefone']+'&email='+formData['email']+'&nome='+formData['nome']+'&texto='+formData['observacao']+'&endereco='+formData['endereco']+'&telefone2='+formData['telefone1']+'&telefone3='+formData['telefone2'],
+                    url     : 'http://www.jornaldopovo.com.br/guiafoneApp/inscrevase.php?telefone='+formData['telefone']+'&email='+formData['email']+'&nome='+formData['nome']+'&observacao='+formData['observacao']+'&endereco='+formData['endereco']+'&telefone2='+formData['telefone1']+'&telefone3='+formData['telefone2'],
                     data    : $scope.formData,  //param method from jQuery //set the headers so angular passing info as form data (not request payload)
                 }).success(function(data){
                       $ionicLoading.hide(); 
@@ -277,7 +282,7 @@ angular.module('starter.controllers', ['ionic'])
             if (contactform.$valid) {             
                 $http({
                     method  : 'POST',
-                    url     : 'http://www.jornaldopovo.com.br/guiafoneApp/?telefone='+formData['telefone']+'&email='+formData['email']+'&nome='+formData['nome']+'&texto='+formData['texto']+'&texto='+formData['endereco']+'&telefone2='+formData['telefone2']+'&telefone3='+formData['telefone3'],
+                    url     : 'http://www.jornaldopovo.com.br/guiafoneApp/anuncie.php?telefone='+formData['telefone']+'&email='+formData['email']+'&nome='+formData['nome']+'&observacao='+formData['observacao']+'&endereco='+formData['endereco'],
                     data    : $scope.formData,  //param method from jQuery //set the headers so angular passing info as form data (not request payload)
                 }).success(function(data){
                       $ionicLoading.hide(); 
