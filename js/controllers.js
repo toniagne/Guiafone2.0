@@ -148,24 +148,41 @@ angular.module('starter.controllers', ['ionic'])
    
 })
 
-.controller('VerDetalhes', function($scope, $stateParams, Chats) {
+.controller('VerDetalhes', function($scope, $stateParams, Chats, $localStorage) {
   $scope.nomes  = "";  
   $scope.chat = Chats.get($stateParams.chatId);
+  
 })
 
-.controller('DetalhesContatoSelecionado', function($scope, $stateParams, Chats, $ionicPopup, $window) {
+.controller('DetalhesContatoSelecionado', function($scope, $stateParams, Chats, $localStorage, $ionicPopup, $window) {
  
-
   $scope.favo = $window.localStorage && $window.localStorage.getItem('my-storage');
   $scope.results = [ 
       ];
 
    $scope.favoritar = function (data){
+     var favoritosObject = [];
+     var itens = data.split("*"); 
+                             var detalheContato = [
+                                {
+                                    "id": itens[0], 
+                                    "strNome": itens[1], 
+                                    "strTelefone1": itens[2], 
+                                    "strTelefone2": itens[3], 
+                                    "strTelefone3": itens[4], 
+                                    "strEndereco":  itens[5], 
+                                    "fotoInterna": itens[6], 
+                                    "pic": itens[7] 
+                                  },
+                             ];       
 
-      var itens   =   data.split("*"); 
-      var arrObjetos = [{strNome:itens[1], strEndereco:itens[2], strTelefone1:itens[3], strTelefone2:itens[4], strTelefone3:itens[5], pic:itens[6]}];
-       Chats.incluiFavoritos(arrObjetos);  
+    
+    var resultado = favoritosObject.push(detalheContato);
 
+   $scope.$storage = $localStorage.$default({
+            favoritando: resultado
+          });
+      
 
       return $ionicPopup.alert({
                        title: 'ATENÇÃO.',
@@ -321,25 +338,14 @@ angular.module('starter.controllers', ['ionic'])
   $scope.mes = "Julho/2015"; 
 })
 
-.controller('Favoritos', function($scope, $stateParams, Chats, $ionicModal, $http, $window, $interval) {
+.controller('Favoritos', function($scope, $stateParams, Chats, $localStorage, $ionicModal, $http, $window, $interval) {
  
-
-    $interval(function() {
-       //$window.location.reload();
-       $scope.count = 1;
-    }, 10000);
-
-    
-   $scope.stopTimer = function() {
-          $window.location.reload(false);
-    };
-
- //  $window.location.reload();
-  $scope.fechajanela = function(){
-    return $scope.modal.hide(); 
-    } 
   
-    $scope.post = Chats.favoritos();
+     $scope.$storage = $localStorage.$default({
+            favoritos: ""
+          });
+      
+     
   
 })
 

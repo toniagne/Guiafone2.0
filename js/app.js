@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCookies'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCookies', 'ngStorage'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
