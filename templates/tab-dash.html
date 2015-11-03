@@ -26,7 +26,7 @@
 <ion-list>
       <ion-item 
               class="item-icon-right item-text-wrap" 
-              ng-repeat="nome in nomes track by $index |  orderBy:['posicao','strNome']"  
+              ng-repeat="nome in nomes track by getTracker()  |  orderBy:['posicao','strNome']"  
               type="item-text-wrap" 
               href="#/tab/dash/{{nome.id}}*{{nome.strNome}}*{{nome.strTelefone1}}*{{nome.strTelefone2}}*{{nome.strTelefone3}}*{{nome.strEndereco}}*{{nome.pic}}"> 
         <img ng-if="nome.bitAtivo == 3" ng-src="img/banners/{{nome.pic}}" width="135%" style="margin-left: -10%;">

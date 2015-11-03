@@ -22,6 +22,11 @@ angular.module('starter.controllers', ['ionic'])
   $scope.airlines = [];
   $scope.botaolimpador = false;
   $scope.pesquisa = true;
+
+  $scope.getTracker = function(v){
+        console.log(Math.random());
+          return Math.random();
+        }
   
     $scope.limpapesquisa = function (){
       $scope.pesquisa = "xxxx"; 
@@ -73,7 +78,10 @@ angular.module('starter.controllers', ['ionic'])
 
 .controller('MenuCtrl', function($scope, $ionicPopup, $ionicActionSheet, $ionicModal) { 
 
-
+  $scope.fechajanela = function(){
+    return $scope.modal.hide(); 
+    } 
+    
     $ionicModal.fromTemplateUrl('templates/modal.html', function (modal) {        
         $scope.modal = modal;
         $scope.teste = function (){consoel.log("vaimerda");}
@@ -239,11 +247,15 @@ angular.module('starter.controllers', ['ionic'])
           formData['telefone'] = null;
           formData['texto'] = null;
           formData['email'] = null;
-        }})
+        }
+
+
+
+      })
 
 .controller('Cadastro', function($scope, $stateParams, $http, $ionicLoading, $ionicPopup) {
-    $scope.submit = function(contactform, formData) {
 
+      $scope.submit = function(contactform, formData) {
     $ionicLoading.show({
             content: 'Carregando Unidades',
             animation: 'fade-in',
@@ -285,6 +297,8 @@ angular.module('starter.controllers', ['ionic'])
           formData['email'] = null;
           formData['observacao'] = null;
         }
+
+
 })
 
 .controller('Anuncie', function($scope, $stateParams, $http, $ionicLoading, $ionicPopup) {
@@ -340,7 +354,10 @@ angular.module('starter.controllers', ['ionic'])
 
 .controller('Favoritos', function($scope, $stateParams, Chats, $localStorage, $ionicModal, $http, $window, $interval) {
  
-  
+    $scope.fechajanela = function(){
+    return $scope.modal.hide(); 
+    } 
+
      $scope.$storage = $localStorage.$default({
             favoritos: ""
           });

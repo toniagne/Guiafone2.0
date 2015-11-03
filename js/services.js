@@ -73,8 +73,10 @@ angular.module('starter.services', ['ngStorage'])
      }
       
 
-
-      return results;
+      var novaArr = results.filter(function(este, i) {
+          return results.indexOf(este) == i;
+      })
+      return novaArr;
     },
 
     listagemCategorias: function(text) {  
