@@ -348,8 +348,8 @@ angular.module('starter.controllers', ['ionic'])
 
 .controller('Configuracoes', function($scope, $stateParams, Chats) {
   $scope.nomes  = "";  
-  $scope.versao = "2.0.15";
-  $scope.mes = "Outubro/2015"; 
+  $scope.versao = "2.0.18";
+  $scope.mes = "Dezembro/2015"; 
 })
 
 .controller('Favoritos', function($scope, $stateParams, Chats, $localStorage, $ionicModal, $http, $window, $interval) {
