@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.jornaldopovo.GuiafoneMobile" versionCode="200210000" version="2.0.21"
+<widget id="com.jornaldopovo.GuiafoneMobile" versionCode="200220000" version="2.0.22"
 	xmlns="http://www.w3.org/ns/widgets"
 	xmlns:gap="http://phonegap.com/ns/1.0">
 	<name>GuiafoneJP</name>
@@ -77,17 +77,22 @@
 		<icon height="58" platform="ios" src="res/icon/ios/icon-small@2x.png" width="58" />
 		<icon height="87" platform="ios" src="res/icon/ios/icon-small@3x.png" width="87" />
 
-		
-		<splash height="1136" platform="ios" src="res/screen/ios/Default-568h@2x~iphone.png" width="640" />
-		<splash height="1334" platform="ios" src="res/screen/ios/Default-667h.png" width="750" />
-		<splash height="2208" platform="ios" src="res/screen/ios/Default-736h.png" width="1242" />
-		<splash height="1242" platform="ios" src="res/screen/ios/Default-Landscape-736h.png" width="2208" />
-		<splash height="1536" platform="ios" src="res/screen/ios/Default-Landscape@2x~ipad.png" width="2048" />
-		<splash height="768" platform="ios" src="res/screen/ios/Default-Landscape~ipad.png" width="1024" />
-		<splash height="2048" platform="ios" src="res/screen/ios/Default-Portrait@2x~ipad.png" width="1536" />
-		<splash height="1024" platform="ios" src="res/screen/ios/Default-Portrait~ipad.png" width="768" />
-		<splash height="960" platform="ios" src="res/screen/ios/Default@2x~iphone.png" width="640" />
-		<splash height="480" platform="ios" src="res/screen/ios/Default~iphone.png" width="320" />
+
+<splash height="480" platform="ios" src="res/screen/ios/Default~iphone.png" width="320" />    
+<splash height="320" platform="ios" src="res/screen/ios/screen-iphone-landscape.png" width="480" /> 
+<splash height="640" platform="ios" src="res/screen/ios/screen-iphone-landscape-2x.png" width="960" />
+<splash height="960" platform="ios" src="res/screen/ios/Default@2x~iphone.png" width="640" />
+<splash height="640" platform="ios" src="res/screen/ios/screen-iphone-landscape-2x.png" width="960" />
+<splash height="568" platform="ios" src="res/screen/ios/Default-Portrait~iphone5.png" width="320" />
+<splash height="1024" platform="ios" src="res/screen/ios/Default-Portrait~ipad.png" width="768" />
+<splash height="768" platform="ios" src="res/screen/ios/Default-Landscape~ipad.png" width="1024" />
+<splash height="2048" platform="ios" src="res/screen/ios/Default-Portrait@2x~ipad.png" width="1536" />
+<splash height="2008" platform="ios" src="res/screen/ios/Default-Portrait@2x~ipad2.png" width="1536" />
+<splash height="1536" platform="ios" src="res/screen/ios/Default-Landscape@2x~ipad.png" width="2048" />
+<splash height="1496" platform="ios" src="res/screen/ios/Default-Landscape@2x~ipad2.png" width="2048" />
+<splash height="1334" platform="ios" src="res/screen/ios/Default-667h.png" width="750" />
+<splash height="2208" platform="ios" src="res/screen/ios/Default-736h.png" width="1242" />
+<splash height="1242" platform="ios" src="res/screen/ios/Default-Landscape-736h.png" width="2208" />
 	</platform>
 	<platform name="wp8">
 		<icon height="99" platform="wp8" src="res/icon/wp8/ApplicationIcon.png" width="99" />
