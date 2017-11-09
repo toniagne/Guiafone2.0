@@ -10,7 +10,7 @@
 
     </author>
 	<content src="index.html" />
-	<preference name="phonegap-version"       value="7.0.1" />
+	<preference name="phonegap-version"       value="cli-7.0.1" />
 	<preference name="DisallowOverscroll" value="true" />
 	<preference name="android-minSdkVersion" value="14" />
 	<preference name="show-splash-screen-spinner" value="true" />
