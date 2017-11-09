@@ -11,12 +11,13 @@
         <input type="text" placeholder="DIGITE SUA PESQUISA" ng-model="expres" style="height: 50px; border: 4px;">
       </label>
        
-      <a href="" class="button icon-left ion-search button-clear button-dark" ng-click="pesquisar(expres); expres = '';"> </a>
+      <a href="" class="button icon-left ion-search button-clear button-dark" ng-click="pesquisar(expres, palavras); expres = '';"> </a>
        <div class="list" ng-show="rodape">
         <li class="item" ng-repeat="airline in airlines | filter:expres ">{{airline.name}}</li>
       </div> 
 
     </div>
+    <ion-checkbox ng-model="palavras">EXPRESSÃO EXATA</ion-checkbox>
      <!--
 <center>
 <a href="#/tab/servicos/favoritos" class="button button-clear button-dark"><i class="icon assertive ion-android-favorite">  </i>  MEUS FAVORITOS </a>

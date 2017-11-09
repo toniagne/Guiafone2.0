@@ -47,7 +47,9 @@ angular.module('starter.controllers', ['ionic'])
                      });
     }
 
-    $scope.pesquisar = function(text)  {
+    $scope.pesquisar = function(text, regra)  {
+
+      
           $scope.botaolimpador = true;
           $scope.pesquisa = false;
           $ionicLoading.show({
@@ -61,7 +63,7 @@ angular.module('starter.controllers', ['ionic'])
 
                 var textodigita   = text.toLowerCase();
 
-                $scope.nomes = Chats.listagem(textodigita);
+                $scope.nomes = Chats.listagem(textodigita, regra);
                 $scope.erroi = "2";
                 $ionicLoading.hide();
                 $scope.rodape = true;

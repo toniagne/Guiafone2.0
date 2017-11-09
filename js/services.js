@@ -33,7 +33,7 @@ angular.module('starter.services', ['ngStorage'])
 
     },
 
-    listagem: function(text) {
+    listagem: function(text, regra) {
       function replaceSpecialChars(str)
             {
                 str = str.replace(/[ÀÁÂÃÄÅ]/,"A");
@@ -51,7 +51,10 @@ angular.module('starter.services', ['ngStorage'])
      var termo1 = replaceSpecialChars(itens[0]);
      var termo2 = itens[1];
 
+     //console.log(termo1);
+
      if (!termo2){
+       
       for(var i=0; i<conteudo.length; i++) {
         for(key in conteudo[i]) {
           if(conteudo[i][key].indexOf(termo1)!=-1) {
@@ -63,6 +66,7 @@ angular.module('starter.services', ['ngStorage'])
      else if (!termo1){
 
      } else{
+      
       for(var i=0; i<conteudo.length; i++) {
         for(key in conteudo[i]) {
           if(conteudo[i][key].indexOf(termo1)!=-1 && conteudo[i][key].indexOf(termo2)!=-1) {
