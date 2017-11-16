@@ -7,26 +7,38 @@
       <img src="img/logo.png" height="100%" > 
   </ion-nav-title>
 
-  <ion-content ng-controller="Favoritos"> 
+  <ion-content> 
   
      <div class="card">
       <div class="item item-divider">
-        SEUS NÚMEROS FAVORITOS  
+       CADASTRO NA PROMOÇÃO DA HORA
       </div>
     </div>
-  {{$storage.favoritando}}
-<ion-list>
-      <ion-item 
-              class="item-icon-right item-text-wrap" 
-              ng-repeat="nome in post track by $index"  
-              type="item-text-wrap" 
-              href="#/tab/favoritos/{{nome.id}}*{{nome.strNome}}*{{nome.strTelefone1}}*{{nome.strTelefone2}}*{{nome.strTelefone3}}*{{nome.strEndereco}}*{{nome.pic}}"> 
-        
-        <h2>{{nome.strNome}}</h2>
-        <p>{{nome.strTelefone1}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
-      </ion-item>
-</ion-list> 
+  <form method="post" ng-submit="submit_promocao(contactform, formData)" name="contactform" role="form">
+ 
+
+<div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">NOME</span>
+    <input type="text" ng-model="formData.nome">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">ENDEREÇO</span>
+    <textarea ng-model="formData.endereco"></textarea>
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">TELEFONE 1</span>
+    <textarea ng-model="formData.telefone"></textarea>
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">TELEFONE 2 (opcional)</span>
+    <textarea ng-model="formData.telefone1"></textarea>
+  </label>
+  
+   
+   <button class="button button-block button-positive">
+  ENVIAR
+</button>
 
 
   </ion-content>

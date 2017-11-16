@@ -95,7 +95,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     views: {
       'tab-servicos': {
         templateUrl: 'templates/favoritos.html',
-        controller: 'Favoritos'
+        controller: 'Cadastro'
       }
     }
   })

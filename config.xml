@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.jornaldopovo.GuiafoneMobile" versionCode="200212000" version="2.0.252"
+<widget id="com.jornaldopovo.Guiafone" versionCode="200300000" version="2.0.3"
 	xmlns="http://www.w3.org/ns/widgets"
 	xmlns:gap="http://phonegap.com/ns/1.0">
 	<name>GuiafoneJP</name>

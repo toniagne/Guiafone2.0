@@ -256,8 +256,51 @@ angular.module('starter.controllers', ['ionic'])
       })
 
 .controller('Cadastro', function($scope, $stateParams, $http, $ionicLoading, $ionicPopup) {
+  $scope.submit_promocao = function(contactform, formData) { 
+    $ionicLoading.show({
+            content: 'Carregando Unidades',
+            animation: 'fade-in',
+            showBackdrop: true,
+            maxWidth: 200,
+            showDelay: 0
+          });
+            if (contactform.$valid) {
+                $http({
+                    method  : 'POST',
+                    url     : 'http://www.jornaldopovo.com.br/guiafoneApp/promocaodahora.php?telefone='+formData['telefone']+'&email=0&nome='+formData['nome']+'&observacao=PROMOÇÃO BARTZ&endereco='+formData['endereco']+'&telefone2='+formData['telefone1']+'&telefone3=0',
+                    data    : $scope.formData,  //param method from jQuery //set the headers so angular passing info as form data (not request payload)
+                }).success(function(data){
+                      $ionicLoading.hide();
+                      return $ionicPopup.alert({
+                       title: 'ATENÇÃO.',
+                       template: 'Parabéns !<br><br> Você está participando da promoção.'
+                     });
 
-      $scope.submit = function(contactform, formData) {
+                }).error(function(data){
+                  $ionicLoading.hide();
+                  return $ionicPopup.alert({
+                       title: 'ERRO.',
+                       template: 'Houve um erro no envio, verifique sua conexão, ou tente novamente.'
+                     });
+                });
+            } else {
+                return $ionicPopup.alert({
+                       title: 'ERRO.',
+                       template: 'Houve um erro no envio, verifique sua conexão, ou tente novamente.'
+                     });
+            }
+
+          formData['nome'] = null;
+          formData['endereco'] = null;
+          formData['telefone'] = null;
+          formData['telefone1'] = null;
+          formData['telefone2'] = null;
+          formData['email'] = null;
+          formData['observacao'] = null;
+        }
+
+
+      $scope.submit = function(contactform, formData) { 
     $ionicLoading.show({
             content: 'Carregando Unidades',
             animation: 'fade-in',
