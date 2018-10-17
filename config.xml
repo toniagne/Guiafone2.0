@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.jornaldopovo.GuiafoneMobile" versionCode="200321100" version="2.0.10"	xmlns="http://www.w3.org/ns/widgets"
+<widget id="com.jornaldopovo.GuiafoneMobile" versionCode="200321200" version="2.0.12"	xmlns="http://www.w3.org/ns/widgets"
 	xmlns:gap="http://phonegap.com/ns/1.0">
 	<name>GuiafoneJP</name>
 	<description>
@@ -11,7 +11,7 @@
     </author>
 	<content src="index.html" />
 	<preference name="DisallowOverscroll" value="true" />
-	<preference name="android-minSdkVersion" value="26" />
+	<preference name="android-minSdkVersion" value="15" />
 	<preference name="show-splash-screen-spinner" value="true" />
 	<preference name="auto-hide-splash-screen" value="true" />
 	<preference name="SplashScreen" value="splash" />
