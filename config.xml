@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.jornaldopovo.GuiafoneMobile" versionCode="200329000" version="2.0.9"	xmlns="http://www.w3.org/ns/widgets"
+<widget id="com.jornaldopovo.GuiafoneMobile" versionCode="200321000" version="2.0.10"	xmlns="http://www.w3.org/ns/widgets"
 	xmlns:gap="http://phonegap.com/ns/1.0">
 	<name>GuiafoneJP</name>
 	<description>
@@ -102,7 +102,7 @@
 	<gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="res/screen/android/screen-hdpi-portrait.png" />
 	<gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="res/screen/android/screen-xhdpi-portrait.png" />
 	<plugin name="phonegap-plugin-push">
-		<variable name="SENDER_ID" value="AAAAjkFM2_k:APA91bGGAhgOE3AlOnYfcGGqksMrPcc0JRp4929VWU4U095rxgurYDbmMGGMBmW7DbmToYo69oQmWAizBHrpsPLXiK9J83qtBNSAFFObHZymzv2eDlLXGpYdMsS9SFSLsyCQm_GH5vwPv-a60h2Rr6ThbmwXxG9M7A" />
+		<variable name="SENDER_ID" value="AAAAw4bOKVI:APA91bH_Tkjy8ACRgmS1NZ0KbK-o4-jrzUAT3ZR7qbRF4Vbj-eQVCDuBgPIRO77gOw0JN9CgouLA3X1wjYBXxtDkLMMrwipQwdCDkzOMHfRaeGNWwe2LyZ1ooNPzZalxZk4WReVflNwk" />
 	</plugin>
 	<access origin="*" />
 	<allow-intent href="http://*/*" />
