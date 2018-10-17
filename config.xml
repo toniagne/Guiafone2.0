@@ -11,7 +11,7 @@
     </author>
 	<content src="index.html" />
 	<preference name="DisallowOverscroll" value="true" />
-	<preference name="android-minSdkVersion" value="14" />
+	<preference name="android-minSdkVersion" value="26" />
 	<preference name="show-splash-screen-spinner" value="true" />
 	<preference name="auto-hide-splash-screen" value="true" />
 	<preference name="SplashScreen" value="splash" />
