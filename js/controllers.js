@@ -10,7 +10,7 @@ angular.module('starter.controllers', ['ionic'])
  setTimeout(function ()
        {
             $location.path('/tab/dash');
-       }, 5000);
+       }, 2000);
 })
 
 .controller('DashCtrl', function($scope, $http, $ionicScrollDelegate, Chats, $ionicPopup, $ionicLoading) {
