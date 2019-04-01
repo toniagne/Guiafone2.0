@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.jornaldopovo.GuiafoneMobile" versionCode="200321930" version="2.0.193"	xmlns="http://www.w3.org/ns/widgets"
+<widget id="com.jornaldopovo.GuiafoneMobile" versionCode="200323000" version="2.0.23"	xmlns="http://www.w3.org/ns/widgets"
 	xmlns:gap="http://phonegap.com/ns/1.0">
 	<name>GuiafoneJP</name>
 	<description>
@@ -100,6 +100,7 @@
 		<variable name="SENDER_ID" value="AAAAw4bOKVI:APA91bEn9GuRJ_W3eW19QG_364XME-lfzUL509p2Y0OG-VBoHapY2uyphYGwfudfEnrN1Tw-uWUQvKEPlvMZao1XEfuju7yfCEhcjNC5lwuNhcYfFZabZMjAIE-JbVpWc0rbNabnaTpc" />
 	</plugin>
 	<access origin="*" />
+	<access origin="tel:*" launch-external="yes"/>
 	<allow-intent href="http://*/*" />
 	<allow-intent href="https://*/*" />
 	<allow-intent href="tel:*" />

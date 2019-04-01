@@ -10,7 +10,7 @@ angular.module('starter.controllers', ['ionic'])
  setTimeout(function ()
        {
             $location.path('/tab/dash');
-       }, 2000);
+       }, 4000);
 })
 
 .controller('DashCtrl', function($scope, $http, $ionicScrollDelegate, Chats, $ionicPopup, $ionicLoading) {
@@ -393,8 +393,8 @@ angular.module('starter.controllers', ['ionic'])
 
 .controller('Configuracoes', function($scope, $stateParams, Chats) {
   $scope.nomes  = "";
-  $scope.versao = "2.0.15";
-  $scope.mes = "Fevereiro/2019";
+  $scope.versao = "2.0.17";
+  $scope.mes = "Abril/2019";
 })
 
 .controller('Favoritos', function($scope, $stateParams, Chats, $localStorage, $ionicModal, $http, $window, $interval) {
